@@ -142,7 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="list.c" />
+    <ClCompile Include="main.c" />
     <ClCompile Include="seq_list.c" />
   </ItemGroup>
   <ItemGroup>

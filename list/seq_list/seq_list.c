@@ -1,6 +1,6 @@
 #include "seq_list.h"
 
-seq_list* SeqListInit (void)
+seq_list * SeqListInit (void)
 {
 	seq_list * plist = (seq_list*) malloc(sizeof(seq_list));
 	if (!plist) {
@@ -31,8 +31,8 @@ int SeqListLocate(seq_list * list, elem_type elem)
 	for (int index = 0; index < list->num_elem; index++)
 		if (list->elem[index] == elem)
 			return index;
-	printf("Illegal input.\n");
-	exit(0);
+	printf("Not find.\n");
+	return -1;
 }
 
 elem_type SeqListFormer(seq_list * list, elem_type elem)
@@ -112,4 +112,53 @@ void SeqListAdd(seq_list * list, elem_type elem)
 void SeqListDelete(seq_list * list)
 {
 	list->num_elem--;
+}
+
+void SeqListCat(seq_list * list1, seq_list * list2)
+{
+	if ((list1->num_elem + list2->num_elem) > MAX_ELEM) {
+		printf("Too many elements.\n");
+		exit(0);
+	}
+	
+	for (int index2 = 0; index2 < list2->num_elem; index2++) {
+		list1->elem[list1->num_elem] = list2->elem[index2];
+		list1->num_elem++;
+	}
+}
+
+seq_list * SeqListUnion(seq_list * list1, seq_list * list2)
+{
+	if ((list1->num_elem + list2->num_elem) > MAX_ELEM) {
+		printf("Too many elements.\n");
+		exit(0);
+	}
+
+	seq_list * new_list = SeqListInit();
+	int index1 = 0, index2 = 0;
+
+	while (index1 < list1->num_elem && index2 < list2->num_elem) {
+		if (list1->elem[index1] <= list2->elem[index2]) {
+			SeqListAdd(new_list, list1->elem[index1]);
+			index1++;
+		}
+		else {
+			SeqListAdd(new_list, list2->elem[index2]);
+			index2++;
+		}
+	}
+
+	if (index1 < list1->num_elem) {
+		while (index1 < list1->num_elem) {
+			SeqListAdd(new_list, list1->elem[index1]);
+			index1++;
+		}
+	}
+	else {
+		while (index2 < list2->num_elem) {
+			SeqListAdd(new_list, list2->elem[index2]);
+			index2++;
+		}
+	}
+	return new_list;
 }

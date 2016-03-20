@@ -18,7 +18,7 @@ typedef struct {
 * parameter: void.
 * return:    a pointer to the new sequential list.
 ********************************/
-seq_list* SeqListInit(void);
+seq_list * SeqListInit(void);
 
 /********************************
 * aim:       get how many a list's elements.
@@ -111,4 +111,21 @@ void SeqListAdd(seq_list * list, elem_type elem);
 * return:    void.
 ********************************/
 void SeqListDelete(seq_list * list);
+
+/********************************
+* aim:       concatenate list2 to list1 without sort.
+* parameter: list1: a pointer to one list.
+*            list2: a pointer to another list.
+* return:    void.
+********************************/
+void SeqListCat(seq_list * list1, seq_list * list2);
+
+/********************************
+* aim:       union list2 and list1 with sort, and return a new list which has two lists' elements.
+* parameter: list1: a pointer to one list.
+*            list2: a pointer to another list.
+* return:    the new list after union.
+********************************/
+seq_list * SeqListUnion(seq_list * list1, seq_list * list2);
+
 #endif // !SEQ_LIST_H
