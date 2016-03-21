@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{08E0F148-EF13-4F0A-BD09-D9D71FFAE791}</ProjectGuid>
+    <ProjectGuid>{CF160CC9-7A1F-48FB-B007-2BAF837002B0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>seq_list</RootNamespace>
+    <RootNamespace>linked_list_head</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,11 +142,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="linked_list_head.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="seq_list.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="seq_list.h" />
+    <ClInclude Include="linked_list_head.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

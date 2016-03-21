@@ -17,10 +17,10 @@ int SeqListLength(seq_list * list)
 	return list->num_elem;
 }
 
-elem_type SeqListGet(seq_list * list, int index)
+elem_type SeqListGet(seq_list * list, int sub)
 {
-	if (index >= 0 && index < list->num_elem) {
-		return list->elem[index];
+	if (sub >= 0 && sub < list->num_elem) {
+		return list->elem[sub];
 	}
 	printf("Illegal input.\n");
 	exit(0);

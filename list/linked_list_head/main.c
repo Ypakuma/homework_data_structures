@@ -16,7 +16,6 @@ int main(void)
 	int ans = LinkedListHeadLength(list);
 	ans = LinkedListHeadGet(list, 3);
 	linked_node* node =  LinkedListHeadLocate(list, 78);
-	ans = LinkedListHeadIndex(list, list->next->next);
 	node = LinkedListHeadLatter(list, 26);
 	node = LinkedListHeadLatter(list, 78);
 

@@ -63,25 +63,6 @@ linked_node * LinkedListHeadLocate(linked_list list, elem_type elem)
 	return NULL;
 }
 
-int LinkedListHeadIndex(linked_list list, linked_node * locat)
-{
-	if (LinkedListHeadEmpty(list)) {
-		printf("Empty list.\n");
-		exit(0);
-	}
-
-	linked_node * pnode = list->next;
-	int num = 1;
-	while (pnode != locat && pnode->next) {
-		pnode = pnode->next;
-		num++;
-	}
-	if (pnode == locat)
-		return num;
-	printf("Illegal location.\n");
-	exit(0);
-}
-
 linked_node * LinkedListHeadFormer(linked_list list, elem_type elem)
 {
 	linked_node * former = list;

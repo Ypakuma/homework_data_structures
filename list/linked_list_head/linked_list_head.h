@@ -14,7 +14,7 @@ typedef struct node{
 } linked_node, * linked_list;
 
 /********************************
-* aim:       create a new linked list and initialize it.
+* aim:       initialize a list.
 * parameter: list: a pointer to the list.
 * return:    void.
 ********************************/
@@ -42,14 +42,6 @@ elem_type LinkedListHeadGet(linked_list list, int index);
 * return:    a pointer to the element.
 ********************************/
 linked_node * LinkedListHeadLocate(linked_list list, elem_type elem);
-
-/********************************
-* aim:       get a element's index by a point to its location in a list.
-* parameter: list: the list
-*			 locat: the pointer to the location.
-* return:    a pointer to the element.
-********************************/
-int LinkedListHeadIndex(linked_list list, linked_node * locat);
 
 /********************************
 * aim:       get a element's former element by its value in a list.

@@ -1,7 +1,6 @@
 #ifndef SEQ_LIST_H
 #define SEQ_LIST_H
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
