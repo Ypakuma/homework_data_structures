@@ -28,6 +28,8 @@
  - get a element's location by the its value in a list.
 - LinkedListHeadUnion
  - union list2 and list1 with sort. clear list3 and store the result in list3
+- SeqToLinkedHead
+ - restore a sequential list to a linked list which have head node.
 
 ## 链表
 #### 这些文件包括了带头链表的一些基本操作函数。
@@ -55,9 +57,10 @@
 - LinkedListHeadLatter
  - 通过一个元素的值，取其后继元素。
 - LinkedListHeadLength
- - 取链表的元素个数
+ - 取链表的元素个数。
 - LinkedListHeadLocate
- - 通过一个元素的值，取其下标
+ - 通过一个元素的值，取其下标。
 - LinkedListHeadLinkedListHeadUnion
  - 有序地合并两个链表，清空第三个链表，并把结果存储在第三个链表中。
-
+- SeqToLinkedHead
+ - 把一个线性表的元素转存到一个带头结点的链表中。
