@@ -68,13 +68,15 @@ linked_node * LinkedListHeadLocate(linked_list * list, elem_type elem)
 
 linked_node * LinkedListHeadFormer(linked_list * list, elem_type elem)
 {
+
+	if (LinkedListHeadEmpty(list)) {
+		printf("Empty list.\n");
+		exit(0);
+	}
+
 	linked_node * former = list;
 	linked_node * pnode = former->next;
-
-	/*if (pnode->elem == elem) {
-		printf("No former.\n");
-		exit(0);
-	}*/
+	
 	while (pnode->elem != elem && pnode->next) {
 		former = pnode;
 		pnode = pnode->next;
