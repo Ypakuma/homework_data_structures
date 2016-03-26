@@ -50,7 +50,7 @@ linked_node * LinkedListHeadLocate(linked_list * list, elem_type elem)
 {
 	if (LinkedListHeadEmpty(list)) {
 		printf("Empty list.\n");
-		exit(0);
+		return NULL;
 	}
 
 	linked_node * pnode = list->next;
@@ -66,10 +66,9 @@ linked_node * LinkedListHeadLocate(linked_list * list, elem_type elem)
 
 linked_node * LinkedListHeadFormer(linked_list * list, elem_type elem)
 {
-
 	if (LinkedListHeadEmpty(list)) {
 		printf("Empty list.\n");
-		exit(0);
+		return NULL;
 	}
 
 	linked_node * former = list;
@@ -81,15 +80,16 @@ linked_node * LinkedListHeadFormer(linked_list * list, elem_type elem)
 	}
 	if (pnode->elem == elem)
 		return former;
+
 	printf("Illegal input.\n");
-	exit(0);
+	return NULL;
 }
 
 linked_node * LinkedListHeadLatter(linked_list * list, elem_type elem)
 {
 	if (LinkedListHeadEmpty(list)) {
 		printf("Empty list.\n");
-		exit(0);
+		return NULL;
 	}
 	
 	linked_node * pnode = list->next;
@@ -97,15 +97,24 @@ linked_node * LinkedListHeadLatter(linked_list * list, elem_type elem)
 	while (pnode->elem != elem && pnode->next) {
 		pnode = pnode->next;
 	}
-	if (pnode->elem == elem)
+	if (pnode->elem == elem) {
+		if (!pnode->next)
+			printf("No latter.\n");
 		return pnode->next;
+	}
+
 	printf("Illegal input.\n");
-	exit(0);
+	return NULL;
 }
 
 void LinkedListHeadInsert(linked_list * list, linked_node * locat, elem_type elem)
 {
 	linked_node * pnode = (linked_node *) malloc(sizeof(linked_node));
+	if (!pnode) {
+		printf("Fail to allocate memory.\n");
+		exit(0);
+	}
+
 	pnode->elem = elem;
 	pnode->next = locat;
 
