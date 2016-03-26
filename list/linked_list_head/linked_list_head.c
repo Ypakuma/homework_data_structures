@@ -74,7 +74,7 @@ linked_node * LinkedListHeadFormer(linked_list * list, linked_list * locat)
 	linked_node * former = list;
 	linked_node * pnode = former->next;
 	
-	while (pnode == locat && pnode->next) {
+	while (pnode != locat && pnode->next) {
 		former = pnode;
 		pnode = pnode->next;
 	}
@@ -116,7 +116,7 @@ void LinkedListHeadInsert(linked_list * list, linked_node * locat, elem_type ele
 	}
 
 	pnode->elem = elem;
-	pnode->next = locat;
+	pnode->next = locat->next;
 	locat->next = pnode;
 }
 
@@ -175,18 +175,17 @@ void LinkedListHeadAdd(linked_list * list, elem_type elem)
 
 	linked_node * pnode = list->next;
 
-	while (elem >= pnode->elem && pnode->next) {
-		if (elem <= pnode->next->elem) {
-			LinkedListHeadInsert(list, pnode->next, elem);
+	while (elem > pnode->elem) {
+		if (!pnode->next) {
+			LinkedListHeadInsert(list, pnode, elem);
 			return;
 		}
 		pnode = pnode->next;
 	}
-	if (elem < pnode->elem) {
-		LinkedListHeadInsert(list, pnode, elem);
-		return;
-	}
-	LinkedListHeadInsert(list, pnode->next, elem);
+
+	linked_node * former;
+	former = LinkedListHeadFormer(list, pnode);
+	LinkedListHeadInsert(list, former, elem);
 }
 
 void LinkedListHeadCat(linked_list * list1, linked_list * list2)

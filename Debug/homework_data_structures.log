@@ -1,2 +1,6 @@
 ﻿  main.c
+  seq_list.c
+  linked_list_nohead.c
+  linked_list_head.c
+  正在生成代码...
   homework_data_structures.vcxproj -> M:\code\homework\homework_data_structures\Debug\homework_data_structures.exe

@@ -1,68 +1,66 @@
-#include "list\linked_list_noHead\linked_list_noHead.h"
+#include "list\linked_list_Head\linked_list_Head.h"
 #include "list\seq_list\seq_list.h"
 
 int main(void)
 {
 	linked_list * list, * list2, * list3;
+
 	seq_list *slist;
+
 	slist = SeqListInit();
-	SeqListAdd(slist, 12);
-	SeqListAdd(slist, 24);
-	SeqListAdd(slist, 37);
-	SeqListAdd(slist, 11);
-	SeqListAdd(slist, 16);
-	SeqListAdd(slist, 50);
+	SeqListAdd(slist, 15);
+	SeqListAdd(slist, 78);
+	SeqListAdd(slist, 25);
 	SeqListAdd(slist, 5);
+	SeqListAdd(slist, 8);
 
+	list = LinkedListHeadInit();
+	list2 = LinkedListHeadInit();
+	list3 = LinkedListHeadInit();
 
-	list = LinkedListNoHeadInit();
-	list2 = LinkedListNoHeadInit();
-	list3 = LinkedListNoHeadInit();
-
-
-	LinkedListNoHeadAdd(&list, 5);
-	LinkedListNoHeadAdd(&list, 78);
-	LinkedListNoHeadAdd(&list, 26);
-	LinkedListNoHeadAdd(&list, 35);
-
-	SeqToLinkedNoHead(slist, &list);
+	SeqToLinkedHead(slist, list);
 	SeqListDestroy(slist);
+	LinkedListHeadAdd(list, 5);
+	LinkedListHeadAdd(list, 78);
+	LinkedListHeadAdd(list, 26);
+	LinkedListHeadAdd(list, 35);
+
 	
-	int ans = LinkedListNoHeadLength(list);
-	ans = LinkedListNoHeadGet(list, 3);
-	linked_node * node = LinkedListNoHeadLocate(list, 78);
-	node = LinkedListNoHeadLatter(list, 26);
-	node = LinkedListNoHeadLatter(list, 78);
+	int ans = LinkedListHeadLength(list);
+	ans = LinkedListHeadGet(list, 3);
+	linked_node * node = LinkedListHeadLocate(list, 78);
+	node = LinkedListHeadLatter(list, 26);
+	node = LinkedListHeadLatter(list, 78);
 	
-	LinkedListNoHeadInsert(list, list->next->next, 99);
-	LinkedListNoHeadDelete(list, list->next->next->next);
+	LinkedListHeadInsert(list, list->next->next, 99);
+	LinkedListHeadDelete(list, list->next->next->next);
 
 
-	LinkedListNoHeadAdd(&list, 5);
-	LinkedListNoHeadAdd(&list, 78);
-	LinkedListNoHeadAdd(&list, 26);
-	LinkedListNoHeadAdd(&list, 35);
-	LinkedListNoHeadDestroy(list);
+	LinkedListHeadAdd(list, 5);
+	LinkedListHeadAdd(list, 78);
+	LinkedListHeadAdd(list, 26);
+	LinkedListHeadAdd(list, 35);
+	LinkedListHeadDestroy(list);
 
-	list = LinkedListNoHeadInit();
+	list = LinkedListHeadInit();
 
 
-	LinkedListNoHeadAdd(&list, 56);
-	LinkedListNoHeadAdd(&list, 53);
-	LinkedListNoHeadAdd(&list, 78);
-	LinkedListNoHeadAdd(&list, 26);
-	LinkedListNoHeadAdd(&list, 35);
+	LinkedListHeadAdd(list, 56);
+	LinkedListHeadAdd(list, 53);
+	LinkedListHeadAdd(list, 78);
+	LinkedListHeadAdd(list, 26);
+	LinkedListHeadAdd(list, 35);
 
-	LinkedListNoHeadAdd(&list2, 115);
-	LinkedListNoHeadAdd(&list2, 154);
-	LinkedListNoHeadAdd(&list2, 178);
-	LinkedListNoHeadAdd(&list2, 216);
-	LinkedListNoHeadAdd(&list2, 315);
+	LinkedListHeadAdd(list2, 115);
+	LinkedListHeadAdd(list2, 154);
+	LinkedListHeadAdd(list2, 178);
+	LinkedListHeadAdd(list2, 216);
+	LinkedListHeadAdd(list2, 315);
 
-	LinkedListNoHeadUnion(list, list2, &list3);
-	LinkedListNoHeadDestroy(list);
-	LinkedListNoHeadDestroy(list2);
-	LinkedListNoHeadDestroy(list3);
+	LinkedListHeadUnion(list, list2, list3);
+	LinkedListHeadDestroy(list);
+	LinkedListHeadDestroy(list2);
+	LinkedListHeadDestroy(list3);
 	
 
 
