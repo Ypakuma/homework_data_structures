@@ -1,12 +1,17 @@
 #include "linked_list_nohead.h"
 
+linked_list * LinkedListNoHeadInit(void)
+{
+	return NULL;
+}
+
 int LinkedListNoHeadLength(linked_list * list)
 {
 	if (LinkedListNoHeadEmpty(list))
 		return 0;
 
 	linked_node * pnode = list;
-	int num = 0;
+	int num = 1;
 
 	while (pnode->next) {
 		num++;
@@ -109,7 +114,7 @@ void LinkedListNoHeadInsert(linked_list * list, linked_node * locat, elem_type e
 	}
 
 	pnode->elem = elem;
-	pnode->next = locat;
+	pnode->next = locat->next;
 	locat->next = pnode;
 }
 
@@ -152,38 +157,38 @@ void LinkedListNoHeadDestroy(linked_list * list)
 	list = NULL;
 }
 
-void LinkedListNoHeadAdd(linked_list * list, elem_type elem)
+void LinkedListNoHeadAdd(linked_list ** list, elem_type elem)
 {
-	if (LinkedListNoHeadEmpty(list) || elem <= list->elem) {
+	if (LinkedListNoHeadEmpty(*list) || elem <= (*list)->elem) {
 		linked_node * pnode = (linked_node *) malloc(sizeof(linked_node));
 		if (!pnode) {
 			printf("Fail to allocate memory.\n");
 			exit(0);
 		}
 		pnode->elem = elem;
-		pnode->next = list;
-		list = pnode;
+		pnode->next = (*list);
+		(*list) = pnode;
 		return;
 	}
 
-	linked_node * pnode = list->next;
+	linked_node * pnode = (*list);
 
 	while (elem > pnode->elem) {
 		if (!pnode->next) {
-			LinkedListNoHeadInsert(list, pnode, elem);
+			LinkedListNoHeadInsert((*list), pnode, elem);
 			return;
 		}
 		pnode = pnode->next;
 	}
 
-	linked_node * former = LinkedListNoHeadFormer(list, pnode);
-	LinkedListNoHeadInsert(list, former, elem);
+	linked_node * former = LinkedListNoHeadFormer((*list), pnode);
+	LinkedListNoHeadInsert((*list), former, elem);
 	return;
 }
 
 void LinkedListNoHeadCat(linked_list * list1, linked_list * list2)
 {
-	if (SeqListEmpty(list1)) {
+	if (LinkedListNoHeadEmpty(list1)) {
 		list1 = list2;
 		return;
 	}
@@ -195,20 +200,21 @@ void LinkedListNoHeadCat(linked_list * list1, linked_list * list2)
 	pnode->next = list2;
 }
 
-void LinkedListNoHeadUnion(linked_list * list1, linked_list * list2, linked_list * list3)
+void LinkedListNoHeadUnion(linked_list * list1, linked_list * list2, linked_list ** list3)
 {
 	if (LinkedListNoHeadEmpty(list1)) {
-		list3 = list2;
+		(*list3) = list2;
 		return;
 	}
 	if (LinkedListNoHeadEmpty(list2)) {
-		list3 = list1;
+		(*list3) = list1;
 		return;
 	}
 
 	linked_node * pnode1 = list1;
 	linked_node * pnode2 = list2;
-	LinkedListNoHeadClear(list3);
+	LinkedListNoHeadDestroy(*list3);
+	(*list3) = LinkedListNoHeadInit();
 
 	while (pnode1 && pnode2) {
 		if (pnode1->elem <= pnode2->elem) {
@@ -230,8 +236,10 @@ void LinkedListNoHeadUnion(linked_list * list1, linked_list * list2, linked_list
 	}
 }
 
-void SeqToLinkedNoHead(seq_list * s_list, linked_list * l_list)
+void SeqToLinkedNoHead(seq_list * s_list, linked_list ** l_list)
 {
+	LinkedListNoHeadDestroy(*l_list);
+	(*l_list) = LinkedListNoHeadInit();
 	int num = s_list->num_elem;
 	while (num) {
 		LinkedListNoHeadAdd(l_list, s_list->elem[num - 1]);
