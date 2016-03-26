@@ -19,7 +19,7 @@
 - LinkedListHeadInit
  - initialize a list.
 - LinkedListHeadInsert
- - insert a element at a known location in a list.
+ - insert a element at a known location's latter location in a list.
 - LinkedListHeadLatter
  - get a element's latter element by its value in a list.
 - LinkedListHeadLength
@@ -53,7 +53,7 @@
 - LinkedListHeadInit
  - 初始化链表。
 - LinkedListHeadInsert
- - 在链表的指定位置处插入元素。
+ - 在链表的指定位置的后面插入元素。
 - LinkedListHeadLatter
  - 通过一个元素的值，取其后继元素。
 - LinkedListHeadLength

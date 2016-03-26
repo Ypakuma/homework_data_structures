@@ -60,7 +60,7 @@ linked_node * LinkedListHeadFormer(linked_list * list, elem_type elem);
 linked_node * LinkedListHeadLatter(linked_list * list, elem_type elem);
 
 /********************************
-* aim:       insert a element at a known location in a list.
+* aim:       insert a element at a known location's latter location in a list.
 * parameter: list:  a pointer to the list
 *            locat: a pointer to the location.
 *			 elem:  the element's value which will be inserted.

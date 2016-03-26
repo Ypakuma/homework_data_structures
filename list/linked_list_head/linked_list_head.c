@@ -117,21 +117,7 @@ void LinkedListHeadInsert(linked_list * list, linked_node * locat, elem_type ele
 
 	pnode->elem = elem;
 	pnode->next = locat;
-
-	if (!locat) {
-		linked_node * last = list;
-		int num = 0;
-
-		while (last->next) {
-			num++;
-			last = last->next;
-		}
-		last->next = pnode;
-		return;
-	}
-
-	linked_node * former = LinkedListHeadFormer(list, locat->elem);
-	former->next = pnode;
+	locat->next = pnode
 }
 
 void LinkedListHeadDelete(linked_list * list, linked_node * locat)
