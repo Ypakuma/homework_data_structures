@@ -141,10 +141,12 @@ seq_list * SeqListUnion(seq_list * list1, seq_list * list2)
 		if (list1->elem[index1] <= list2->elem[index2]) {
 			SeqListAdd(new_list, list1->elem[index1]);
 			index1++;
+			new_list->num_elem++;
 		}
 		else {
 			SeqListAdd(new_list, list2->elem[index2]);
 			index2++;
+			new_list->num_elem++;
 		}
 	}
 
@@ -152,12 +154,14 @@ seq_list * SeqListUnion(seq_list * list1, seq_list * list2)
 		while (index1 < list1->num_elem) {
 			SeqListAdd(new_list, list1->elem[index1]);
 			index1++;
+			new_list->num_elem++;
 		}
 	}
 	else {
 		while (index2 < list2->num_elem) {
 			SeqListAdd(new_list, list2->elem[index2]);
 			index2++;
+			new_list->num_elem++;
 		}
 	}
 	return new_list;
