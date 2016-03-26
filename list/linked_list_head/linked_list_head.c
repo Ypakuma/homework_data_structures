@@ -54,12 +54,10 @@ linked_node * LinkedListHeadLocate(linked_list * list, elem_type elem)
 	}
 
 	linked_node * pnode = list->next;
-	int index = 1;
 
-	while (pnode->elem != elem && pnode->next) {
+	while (pnode->elem != elem && pnode->next) 
 		pnode = pnode->next;
-		index++;
-	}
+
 	if (pnode->elem == elem)
 		return pnode;
 	printf("Not find.\n");
@@ -170,6 +168,7 @@ void LinkedListHeadDestroy(linked_list * list)
 {
 	LinkedListHeadClear(list);
 	free(list);
+	list->next = NULL;
 }
 
 void LinkedListHeadAdd(linked_list * list, elem_type elem)
