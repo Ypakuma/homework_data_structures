@@ -64,7 +64,7 @@ linked_node * LinkedListHeadLocate(linked_list * list, elem_type elem)
 	return NULL;
 }
 
-linked_node * LinkedListHeadFormer(linked_list * list, elem_type elem)
+linked_node * LinkedListHeadFormer(linked_list * list, linked_list * locat)
 {
 	if (LinkedListHeadEmpty(list)) {
 		printf("Empty list.\n");
@@ -74,11 +74,11 @@ linked_node * LinkedListHeadFormer(linked_list * list, elem_type elem)
 	linked_node * former = list;
 	linked_node * pnode = former->next;
 	
-	while (pnode->elem != elem && pnode->next) {
+	while (pnode == locat && pnode->next) {
 		former = pnode;
 		pnode = pnode->next;
 	}
-	if (pnode->elem == elem)
+	if (pnode == locat)
 		return former;
 
 	printf("Illegal input.\n");
@@ -123,10 +123,7 @@ void LinkedListHeadInsert(linked_list * list, linked_node * locat, elem_type ele
 void LinkedListHeadDelete(linked_list * list, linked_node * locat)
 {
 	linked_node * former;
-	if (list->next == locat)
-		former = list;
-	else
-		former = LinkedListHeadFormer(list, locat->elem);
+	former = LinkedListHeadFormer(list, locat);
 
 	former->next = locat->next;
 	

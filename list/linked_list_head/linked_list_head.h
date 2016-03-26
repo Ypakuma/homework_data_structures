@@ -16,7 +16,7 @@ typedef struct node{
 /********************************
 * aim:       initialize a list.
 * parameter: void.
-* return:    a pointer to the new linked list
+* return:    a pointer to the new linked list.
 ********************************/
 linked_list * LinkedListHeadInit(void);
 
@@ -37,23 +37,23 @@ elem_type LinkedListHeadGet(linked_list * list, int index);
 
 /********************************
 * aim:       get a element's location by the its value in a list.
-* parameter: list: a pointer to the list
+* parameter: list: a pointer to the list.
 *			 elem: the element's value.
 * return:    a pointer to the element.
 ********************************/
 linked_node * LinkedListHeadLocate(linked_list * list, elem_type elem);
 
 /********************************
-* aim:       get a element's former element by its value in a list.
-* parameter: list: a pointer to the list
-*			 elem: the element's value.
-* return:    a pointer to the former element.
+* aim:       get a location's former location in a list.
+* parameter: list:  a pointer to the list.
+*			 locat: a pointer to the location whose former will be get.
+* return:    a pointer to the former location.
 ********************************/
-linked_node * LinkedListHeadFormer(linked_list * list, elem_type elem);
+linked_node * LinkedListHeadFormer(linked_list * list, linked_list * locat);
 
 /********************************
 * aim:       get a element's latter element by its value in a list.
-* parameter: list: a pointer to the list
+* parameter: list: a pointer to the list.
 *			 elem: the element's value.
 * return:    a pointer to the latter element.
 ********************************/
@@ -61,7 +61,7 @@ linked_node * LinkedListHeadLatter(linked_list * list, elem_type elem);
 
 /********************************
 * aim:       insert a element at a known location's latter location in a list.
-* parameter: list:  a pointer to the list
+* parameter: list:  a pointer to the list.
 *            locat: a pointer to the location.
 *			 elem:  the element's value which will be inserted.
 * return:    void.
@@ -70,7 +70,7 @@ void LinkedListHeadInsert(linked_list * list, linked_node * locat, elem_type ele
 
 /********************************
 * aim:       delete a element at a known index(from 1) in a list.
-* parameter: list:  a pointer to the list
+* parameter: list:  a pointer to the list.
 *            locat: a pointer to the location.
 * return:    void.
 ********************************/
@@ -78,28 +78,28 @@ void LinkedListHeadDelete(linked_list * list, linked_node * locat);
 
 /********************************
 * aim:       judge a list is empty or not.
-* parameter: list: a pointer to the list
+* parameter: list: a pointer to the list.
 * return:    bool value whether the list is empty or not.
 ********************************/
 bool LinkedListHeadEmpty(linked_list * list);
 
 /********************************
 * aim:       clear all the elements in a list.
-* parameter: list: a pointer to the list
+* parameter: list: a pointer to the list.
 * return:    void.
 ********************************/
 void LinkedListHeadClear(linked_list * list);
 
 /********************************
 * aim:       destroy a list.
-* parameter: list: a pointer to the list
+* parameter: list: a pointer to the list.
 * return:    void.
 ********************************/
 void LinkedListHeadDestroy(linked_list * list);
 
 /********************************
 * aim:       add a new element in a list by sort.
-* parameter: list: a pointer to the list
+* parameter: list: a pointer to the list.
 *            elem: the element's value which will be added.
 * return:    void.
 ********************************/

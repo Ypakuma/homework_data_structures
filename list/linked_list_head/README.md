@@ -13,7 +13,7 @@
 - LinkedListHeadEmpty
  - judge a list is empty or not.
 - LinkedListHeadFormer
- - get a element's former element by its value in a list.
+ - get a location's former location in a list.
 - LinkedListHeadGet
  - get a element by the its index(from 1) in a list.
 - LinkedListHeadInit
@@ -47,7 +47,7 @@
 - LinkedListHeadEmpty
  - 判断一个链表是否为空。
 - LinkedListHeadFormer
- - 通过一个元素的值，取其前驱元素。
+ - 通过一个指定位置，取其前驱元素。
 - LinkedListHeadGet
  - 通过一个元素的下标（从0开始），取其值。
 - LinkedListHeadInit
