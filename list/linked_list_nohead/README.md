@@ -23,9 +23,9 @@
 - LinkedListNoHeadAdd
  - add a new element in a list by sort.
 - LinkedListNoHeadCat
- - concatenate list2 to list1 without sort.
+ - concatenate list2 to list1 without sort, and destory list2.
 - LinkedListNoHeadUnion
- - union list2 and list1 with sort. clear list3 and store the result in list3.
+ - union list2 to list1 by sort, and destory list2..
 - SeqToLinkedNoHead
  - restore a sequential list to a linked list without head node.
 
@@ -54,8 +54,8 @@
 - LinkedListNoHeadAdd
  - 在链表中按序添加一个新元素。
 - LinkedListNoHeadCat
- - 无序地把list2合并到list1的末尾。
+ - 无序地把list2合并到list1的末尾，并销毁list2。
 - LinkedListNoHeadUnion
- - 有序地合并两个链表，清空第三个链表，并把结果存储在第三个链表中。
+ - 有序地把list2合并到list1，并销毁list2。
 - SeqToLinkedNoHead
  - 把一个线性表的元素转存到一个带头结点的链表中。

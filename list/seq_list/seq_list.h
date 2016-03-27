@@ -65,9 +65,9 @@ elem_type SeqListLatter(seq_list * list, elem_type elem);
 * parameter: list:  a pointer to the list.
 *            index: the known index which between 0 to the list's element numbers.
 *			 elem:  the element's value which will be inserted.
-* return:    void.
+* return:    bool value whether the function is success or not.
 ********************************/
-void SeqListInsert(seq_list * list, int index, elem_type elem);
+bool SeqListInsert(seq_list * list, int index, elem_type elem);
 
 /********************************
 * aim:       delete a element at a known index in a list.
