@@ -16,7 +16,7 @@ typedef struct node{
 /********************************
 * aim:       initialize a list.
 * parameter: void.
-* return:    a the new linked list.
+* return:    the new linked list.
 ********************************/
 linked_list LinkedListHeadInit(void);
 
