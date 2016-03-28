@@ -31,9 +31,9 @@ int LinkedListHeadLength(linked_list list);
 * aim:       get a element by the its index(from 1) in a list.
 * parameter: list:  the list.
 *			 index: the element's index.
-* return:    the element's value.
+* return:    a pointer to the element.
 ********************************/
-elem_type LinkedListHeadGet(linked_list list, int index);
+linked_node * LinkedListHeadGet(linked_list list, int index);
 
 /********************************
 * aim:       get a element's location by the its value in a list.

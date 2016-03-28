@@ -24,6 +24,9 @@
     <ClInclude Include="list\linked_list_nohead\linked_list_nohead.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="list\linked_list_circularly\linked_list_circularly.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="list\linked_list_head\linked_list_head.c">
@@ -36,6 +39,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="list\linked_list_nohead\linked_list_nohead.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="list\linked_list_circularly\linked_list_circularly.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

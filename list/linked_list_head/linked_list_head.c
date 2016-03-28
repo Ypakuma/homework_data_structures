@@ -26,11 +26,11 @@ int LinkedListHeadLength(linked_list list)
 	return num;
 }
 
-elem_type LinkedListHeadGet(linked_list list, int index)
+linked_node * LinkedListHeadGet(linked_list list, int index)
 {
 	if (LinkedListHeadEmpty(list)) {
 		printf("Empty list.\n");
-		exit(0);
+		return NULL;
 	}
 
 	linked_node * pnode = list->next;
@@ -41,9 +41,9 @@ elem_type LinkedListHeadGet(linked_list list, int index)
 		num++;
 	}
 	if (num == index)
-		return pnode->elem;
+		return pnode;
 	printf("Input too much.\n");
-	exit(0);
+	return NULL;
 }
 
 linked_node * LinkedListHeadLocate(linked_list list, elem_type elem)
