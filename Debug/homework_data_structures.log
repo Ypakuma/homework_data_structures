@@ -1,2 +1,5 @@
-﻿  linked_list_nohead.c
+﻿  main.c
+m:\code\homework\homework_data_structures\main.c(7): warning C4101: “list2”: 未引用的局部变量
+  linked_list_cir_doub.c
+  正在生成代码...
   homework_data_structures.vcxproj -> M:\code\homework\homework_data_structures\Debug\homework_data_structures.exe
