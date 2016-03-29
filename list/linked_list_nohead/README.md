@@ -1,5 +1,5 @@
-## Linked List
-#### These files include some  fundamental functionss linked list with head.
+## Linked List without Head Node
+#### These files include some  fundamental functionss linked list without head.
 - LinkedListNoHeadInit
  - initialize a list.
 - LinkedListNoHeadLength
@@ -29,8 +29,8 @@
 - SeqToLinkedNoHead
  - restore a sequential list to a linked list without head node.
 
-## 链表
-#### 这些文件包括了带头链表的一些基本操作函数。
+## 不带头结点的链表
+#### 这些文件包括了不带头节点的链表的一些基本操作函数。
 - LinkedListNoHeadInit
  - 初始化链表。
 - LinkedListNoHeadLength
