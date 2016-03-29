@@ -1,12 +1,2 @@
-﻿  main.c
-m:\code\homework\homework_data_structures\main.c(34): warning C4047: “函数”:“linked_list *”与“linked_list”的间接级别不同
-m:\code\homework\homework_data_structures\main.c(34): warning C4024: “LinkedListNoHeadFormer”: 形参和实参 1 的类型不同
-  linked_list_nohead.c
-m:\code\homework\homework_data_structures\list\linked_list_nohead\linked_list_nohead.c(66): warning C4047: “==”:“linked_list *”与“linked_node *”的间接级别不同
-m:\code\homework\homework_data_structures\list\linked_list_nohead\linked_list_nohead.c(71): warning C4047: “初始化”:“linked_node *”与“linked_list *”的间接级别不同
-m:\code\homework\homework_data_structures\list\linked_list_nohead\linked_list_nohead.c(133): warning C4047: “函数”:“linked_list *”与“linked_list”的间接级别不同
-m:\code\homework\homework_data_structures\list\linked_list_nohead\linked_list_nohead.c(133): warning C4024: “LinkedListNoHeadFormer”: 形参和实参 1 的类型不同
-  linked_list_head.c
-  正在生成代码...
-m:\code\homework\homework_data_structures\list\linked_list_nohead\linked_list_nohead.c(140): warning C4715: “LinkedListNoHeadDelete”: 不是所有的控件路径都返回值
+﻿  linked_list_nohead.c
   homework_data_structures.vcxproj -> M:\code\homework\homework_data_structures\Debug\homework_data_structures.exe
