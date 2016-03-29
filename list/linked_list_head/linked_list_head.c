@@ -94,9 +94,9 @@ linked_node * LinkedListHeadLatter(linked_list list, elem_type elem)
 	
 	linked_node * pnode = list->next;
 
-	while (pnode->elem != elem && pnode->next) {
+	while (pnode->elem != elem && pnode->next)
 		pnode = pnode->next;
-	}
+
 	if (pnode->elem == elem) {
 		if (!pnode->next)
 			printf("No latter.\n");
@@ -122,12 +122,17 @@ void LinkedListHeadInsert(linked_node * locat, elem_type elem)
 
 void LinkedListHeadDelete(linked_list list, linked_node * locat)
 {
+	if (locat == list) {
+		printf("Can't delete the head node.\n");
+		return;
+	}
 	linked_node * former;
 	former = LinkedListHeadFormer(list, locat);
 
-	former->next = locat->next;
-	
-	free(locat);
+	if (former) {
+		former->next = locat->next;
+		free(locat);
+	}
 }
 
 bool LinkedListHeadEmpty(linked_list list)
@@ -158,9 +163,11 @@ void LinkedListHeadClear(linked_list list)
 
 void LinkedListHeadDestroy(linked_list list)
 {
-	LinkedListHeadClear(list);
-	free(list);
-	list->next = NULL;
+	if (list) {
+		LinkedListHeadClear(list);
+		free(list);
+		list->next = NULL;
+	}
 }
 
 void LinkedListHeadAdd(linked_list list, elem_type elem)
@@ -188,35 +195,39 @@ void LinkedListHeadAdd(linked_list list, elem_type elem)
 	LinkedListHeadInsert(former, elem);
 }
 
-void LinkedListHeadCat(linked_list list1, linked_list list2)
+void LinkedListHeadCat(linked_list * list1, linked_list * list2)
 {
-	linked_node * pnode = list1;
+	linked_node * pnode = (*list1);
 
 	while (pnode->next)
 		pnode = pnode->next;
-	pnode->next = list2->next;
-	free(list2);
+	pnode->next = (*list2)->next;
+	free(*list2);
 }
 
-void LinkedListHeadUnion(linked_list list1, linked_list list2)
+void LinkedListHeadUnion(linked_list * list1, linked_list * list2)
 {
-	linked_node * former1 = list1;
-	linked_node * pnode1 = list1->next;
-	linked_node * pnode2 = list2->next;
+	linked_node * former1 = (*list1);
+	linked_node * pnode1 = (*list1)->next;
+	linked_node * pnode2 = (*list2)->next;
 
 	while (pnode1 && pnode2) {
-		if (pnode1->elem <= pnode2->elem)
-			pnode1 = pnode1->next;
-		else {
+		if (pnode1->elem > pnode2->elem) {
 			linked_node * ptemp = pnode2->next;
-			pnode2->next = pnode1->next;
-			pnode1->next = pnode2;
+			pnode2->next = pnode1;
+			former1->next = pnode2;
 			pnode2 = ptemp;
+			former1 = former1->next;
+		}
+		else {
+			pnode1 = pnode1->next;
+			former1 = former1->next;
 		}
 	}
 	if (pnode2)
 		former1->next = pnode2;
-	free(list2);
+	free(*list2);
+	list2 = NULL;
 }
 
 void SeqToLinkedHead(seq_list * s_list, linked_list l_list)

@@ -16,7 +16,7 @@ typedef struct node{
 /********************************
 * aim:       initialize a list.
 * parameter: void.
-* return:    the new linked list.
+* return:    a the new linked list.
 ********************************/
 linked_list LinkedListHeadInit(void);
 
@@ -68,7 +68,7 @@ linked_node * LinkedListHeadLatter(linked_list list, elem_type elem);
 void LinkedListHeadInsert(linked_node * locat, elem_type elem);
 
 /********************************
-* aim:       delete a element at a known index(from 1) in a list.
+* aim:       delete a element at a known location in a list.
 * parameter: list:  the list.
 *            locat: a pointer to the location.
 * return:    void.
@@ -106,20 +106,19 @@ void LinkedListHeadAdd(linked_list list, elem_type elem);
 
 /********************************
 * aim:       concatenate list2 to list1 without sort, and destroy list2.
-* parameter: list1: one list.
-*            list2: another list.
+* parameter: list1: a pointer to one list.
+*            list2: a pointer to another list.
 * return:    void.
 ********************************/
-void LinkedListHeadCat(linked_list list1, linked_list list2);
+void LinkedListHeadCat(linked_list * list1, linked_list * list2);
 
 /********************************
 * aim:       union list2 to list1 by sort, and destroy list2.
-* parameter: list1: one list.
-*            list2: another list.
-*            list3: the list which will be cleared and stored.
+* parameter: list1: a pointer to one list.
+*            list2: a pointer to another list.
 * return:    void
 ********************************/
-void LinkedListHeadUnion(linked_list list1, linked_list list2);
+void LinkedListHeadUnion(linked_list * list1, linked_list * list2);
 
 /********************************
 * aim:       restore a sequential list to a linked list which have head node.

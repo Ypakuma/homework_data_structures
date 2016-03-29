@@ -45,11 +45,11 @@ linked_node * LinkedListNoHeadLocate(linked_list list, elem_type elem);
 
 /********************************
 * aim:       get a location's former location in a list.
-* parameter: list:  a pointer to the list.
+* parameter: list:  the list.
 *			 locat: a pointer to the location whose former will be get.
 * return:    a pointer to the former element.
 ********************************/
-linked_node * LinkedListNoHeadFormer(linked_list * list, linked_node * locat);
+linked_node * LinkedListNoHeadFormer(linked_list list, linked_node * locat);
 
 /********************************
 * aim:       get a element's latter element by its value in a list.
@@ -68,7 +68,7 @@ linked_node * LinkedListNoHeadLatter(linked_list list, elem_type elem);
 bool LinkedListNoHeadInsert(linked_node * locat, elem_type elem);
 
 /********************************
-* aim:       delete a element at a known index(from 1) in a list.
+* aim:       delete a element at a known location in a list.
 * parameter: list:  the list.
 *            locat: a pointer to the location.
 * return:    bool value whether the operation is success or not.

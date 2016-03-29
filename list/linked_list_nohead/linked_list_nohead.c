@@ -61,7 +61,7 @@ linked_node * LinkedListNoHeadLocate(linked_list list, elem_type elem)
 	return NULL;
 }
 
-linked_node * LinkedListNoHeadFormer(linked_list * list, linked_node * locat)
+linked_node * LinkedListNoHeadFormer(linked_list list, linked_node * locat)
 {
 	if (list == locat) {
 		printf("No former.\n");
@@ -132,11 +132,13 @@ bool LinkedListNoHeadDelete(linked_list list, linked_node * locat)
 	linked_node * former;
 	former = LinkedListNoHeadFormer(list, locat);
 	if (former == NULL) {
-		printf("can not delete.\n");
+		printf("Can not delete.\n");
 		return false;
 	}
 	former->next = locat->next;
 	free(locat);
+
+	return true;
 }
 
 bool LinkedListNoHeadEmpty(linked_list list)
@@ -149,19 +151,21 @@ bool LinkedListNoHeadEmpty(linked_list list)
 
 void LinkedListNoHeadDestroy(linked_list * list)
 {
-	if (LinkedListNoHeadEmpty(*list))
-		return;
+	if (*list) {
+		if (LinkedListNoHeadEmpty(*list))
+			return;
 
-	linked_node * pnode = (*list);
+		linked_node * pnode = (*list);
 
-	while (pnode->next) {
-		linked_node * latter = pnode->next;
+		while (pnode->next) {
+			linked_node * latter = pnode->next;
+			free(pnode);
+			pnode = latter;
+		}
 		free(pnode);
-		pnode = latter;
-	}
-	free(pnode);
 
-	*list = NULL;
+		*list = NULL;
+	}
 }
 
 void LinkedListNoHeadAdd(linked_list * list, elem_type elem)
@@ -224,15 +228,16 @@ void LinkedListNoHeadUnion(linked_list * list1, linked_list * list2)
 	linked_node * pnode2 = *list2;
 
 	while (pnode1 && pnode2) {
-		if (pnode1->elem < pnode2->elem) {
-			former1 = pnode1;
-			pnode1 = former1->next;
+		if (pnode1->elem > pnode2->elem) {
+			linked_node * ptemp = pnode2->next;
+			pnode2->next = pnode1;
+			former1->next = pnode2;
+			pnode2 = ptemp;
+			former1 = former1->next;
 		}
 		else {
-			linked_node * ptemp = pnode2->next;
-			pnode2->next = pnode1->next;
-			pnode1->next = pnode2;
-			pnode2 = ptemp;
+			pnode1 = pnode1->next;
+			former1 = former1->next;
 		}
 	}
 	if (pnode2)
