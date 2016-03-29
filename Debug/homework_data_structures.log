@@ -1,3 +1,2 @@
-﻿  linked_list_cir.c
-m:\code\homework\homework_data_structures\list\linked_list_circularly\linked_list_cir.c(5): warning C4047: “初始化”:“cir_list”与“cir_list *”的间接级别不同
+﻿  linked_list_nohead.c
   homework_data_structures.vcxproj -> M:\code\homework\homework_data_structures\Debug\homework_data_structures.exe
