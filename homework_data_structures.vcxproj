@@ -143,12 +143,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="list\linked_list_circularly\linked_list_cir.h" />
+    <ClInclude Include="list\linked_list_circularly_double\linked_list_cir_doub.h" />
     <ClInclude Include="list\linked_list_head\linked_list_head.h" />
     <ClInclude Include="list\linked_list_nohead\linked_list_nohead.h" />
     <ClInclude Include="list\seq_list\seq_list.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="list\linked_list_circularly\linked_list_cir.c" />
+    <ClCompile Include="list\linked_list_circularly_double\linked_list_cir_doub.c" />
     <ClCompile Include="list\linked_list_head\linked_list_head.c" />
     <ClCompile Include="list\linked_list_nohead\linked_list_nohead.c" />
     <ClCompile Include="list\seq_list\seq_list.c" />

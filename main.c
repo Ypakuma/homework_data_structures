@@ -1,9 +1,10 @@
-#include "list\linked_list_circularly\linked_list_cir.h"
+#include "list\linked_list_circularly_double\linked_list_cir_doub.h"
+#include "list\seq_list\seq_list.h"
 
 int main(void)
 {
-	cir_list_t list_t;
-	//cir_list_t list2;
+	cir_doub_list list;
+	cir_doub_list list2;
 
 	seq_list *slist;
 
@@ -14,57 +15,47 @@ int main(void)
 	SeqListAdd(slist, 5);
 	SeqListAdd(slist, 8);
 
-	list_t = LinkedListCirInit();
-	//list2 = LinkedListCirInit();
+	list = LinkedListCirDoubInit();
+	//list2 = LinkedListCirDoubInit();
 
-	SeqToLinkedCir(slist, &list_t);
+	SeqToLinkedCirDoub(slist, list);
 	SeqListDestroy(slist);
-	//LinkedListCirAdd(&list_t, 5);
-	//LinkedListCirAdd(&list_t, 78);
-	//LinkedListCirAdd(&list_t, 26);
-	//LinkedListCirAdd(&list_t, 35);
+	//LinkedListCirDoubAdd(list, 5);
+	//LinkedListCirDoubAdd(list, 78);
+	//LinkedListCirDoubAdd(list, 26);
+	//LinkedListCirDoubAdd(list, 35);
 
-	//LinkedListCirClear(&list_t);
+	//LinkedListCirDoubClear(list);
 
-	//LinkedListCirDestroy(list_t);
-	//list_t = LinkedListCirInit();
-
-
-	//int ans = LinkedListCirLength(list_t);
-	//cir_node * node = LinkedListCirGet(list_t, 3);
-	//node = LinkedListCirLocate(list_t, 78);
-	//node = LinkedListCirFormer(list_t, node);
-	//node = LinkedListCirLatter(list_t, 26);
-	//node = LinkedListCirLatter(list_t, 78);
-
-	//LinkedListCirInsert(&list_t, list_t->next->next, 99);
-	//LinkedListCirDelete(&list_t, list_t->next->next->next);
+	//LinkedListCirDoubDestroy(list);
+	//list = LinkedListCirDoubInit();
 
 
-	//LinkedListCirAdd(&list_t, 5);
-	//LinkedListCirAdd(&list_t, 78);
-	//LinkedListCirAdd(&list_t, 26);
-	//LinkedListCirAdd(&list_t, 35);
-	//LinkedListCirDestroy(list_t);
+	//int ans = LinkedListCirDoubLength(list);
+	//cir_doub_node * node = LinkedListCirDoubGet(list, 3);
+	//node = LinkedListCirDoubLocate(list, 78);
 
-	//list_t = LinkedListCirInit();
+	//LinkedListCirDoubInsert(list->next->next, 99);
+	//LinkedListCirDoubDelete(list, list->next->next->next);
 
 
-	//LinkedListCirAdd(&list_t, 56);
-	//LinkedListCirAdd(&list2, 53);
-	//LinkedListCirAdd(&list_t, 78);
-	//LinkedListCirAdd(&list2, 26);
-	//LinkedListCirAdd(&list_t, 35);
+	//LinkedListCirDoubAdd(list, 56);
+	//LinkedListCirDoubAdd(list2, 53);
+	//LinkedListCirDoubAdd(list, 78);
+	//LinkedListCirDoubAdd(list2, 26);
+	//LinkedListCirDoubAdd(list, 35);
 
-	//LinkedListCirAdd(&list2, 115);
-	//LinkedListCirAdd(&list2, 154);
-	//LinkedListCirAdd(&list_t, 178);
-	//LinkedListCirAdd(&list2, 346);
-	//LinkedListCirAdd(&list_t, 255);
+	//LinkedListCirDoubAdd(list2, 115);
+	//LinkedListCirDoubAdd(list2, 154);
+	//LinkedListCirDoubAdd(list, 178);
+	//LinkedListCirDoubAdd(list2, 346);
+	//LinkedListCirDoubAdd(list, 255);
 
-	//LinkedListCirUnion(&list_t, &list2);
-	//LinkedListCirDestroy(list_t);
-	//LinkedListCirDestroy(list2);
+	//LinkedListCirDoubUnion(list, &list2);
+	//LinkedListCirDoubCat(list, &list2);
+	//
+	//LinkedListCirDoubDestroy(list);
+	//LinkedListCirDoubDestroy(list2);
 
 
 
