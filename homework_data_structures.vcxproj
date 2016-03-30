@@ -147,6 +147,7 @@
     <ClInclude Include="list\linked_list_head\linked_list_head.h" />
     <ClInclude Include="list\linked_list_nohead\linked_list_nohead.h" />
     <ClInclude Include="list\seq_list\seq_list.h" />
+    <ClInclude Include="queue\cir_queue\cir_queue.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="list\linked_list_circularly\linked_list_cir.c" />
@@ -155,6 +156,7 @@
     <ClCompile Include="list\linked_list_nohead\linked_list_nohead.c" />
     <ClCompile Include="list\seq_list\seq_list.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="queue\cir_queue\cir_queue.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
