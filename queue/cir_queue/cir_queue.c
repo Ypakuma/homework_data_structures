@@ -1,8 +1,8 @@
 #include "cir_queue.h"
 
-seq_queue SeqQueueInit(void)
+cir_queue CirQueueInit(void)
 {
-	seq_queue pqueue = (seq_queue) malloc(sizeof(struct queue));
+	cir_queue pqueue = (cir_queue) malloc(sizeof(struct queue));
 
 	pqueue->front = 0;
 	pqueue->count = 0;
@@ -11,19 +11,19 @@ seq_queue SeqQueueInit(void)
 	return pqueue;
 }
 
-bool SeqQueueEmpty(seq_queue queue)
+bool CirQueueEmpty(cir_queue queue)
 {
 	return !(queue->count);
 }
 
-bool SeqQueueFull(seq_queue queue)
+bool CirQueueFull(cir_queue queue)
 {
 	return queue->count == MAX_ELEM;
 }
 
-bool SeqQueueEnter(seq_queue queue, elem_type elem)
+bool CirQueueEnter(cir_queue queue, elem_type elem)
 {
-	if (SeqQueueFull(queue)) {
+	if (CirQueueFull(queue)) {
 		printf("Full queue.\n");
 		return false;
 	}
@@ -34,9 +34,9 @@ bool SeqQueueEnter(seq_queue queue, elem_type elem)
 	return true;
 }
 
-elem_type SeqStackExit(seq_queue queue)
+elem_type CirQueueExit(cir_queue queue)
 {
-	if (SeqStackEmpty(queue)) {
+	if (CirQueueEmpty(queue)) {
 		printf("Empty queue.\n");
 		exit(0);
 	}
@@ -48,13 +48,13 @@ elem_type SeqStackExit(seq_queue queue)
 	return elem;
 }
 
-void SeqQueueClear(seq_queue queue)
+void CirQueueClear(cir_queue queue)
 {
 	queue->front = 0;
 	queue->count = 0;
 }
 
-void SeqQueueDestroy(seq_queue * queue)
+void CirQueueDestroy(cir_queue * queue)
 {
 	if (*queue) {
 		free((*queue)->elem);
