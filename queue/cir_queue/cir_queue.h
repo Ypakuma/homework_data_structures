@@ -5,12 +5,12 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define MAX_ELEM 100
+#define MAX_ELEM 10
 
 typedef int elem_type;
 typedef struct queue {
 	int front;
-	int count;
+	int rear;
 	elem_type * elem;
 } *cir_queue;
 

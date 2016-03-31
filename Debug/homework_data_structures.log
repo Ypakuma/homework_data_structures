@@ -1,2 +1,5 @@
 ﻿  cir_queue.c
+  main.c
+m:\code\homework\homework_data_structures\main.c(24): warning C4013: “CirQueueExit”未定义；假设外部返回 int
+  正在生成代码...
   homework_data_structures.vcxproj -> M:\code\homework\homework_data_structures\Debug\homework_data_structures.exe

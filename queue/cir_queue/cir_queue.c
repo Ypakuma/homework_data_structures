@@ -5,20 +5,21 @@ cir_queue CirQueueInit(void)
 	cir_queue pqueue = (cir_queue) malloc(sizeof(struct queue));
 
 	pqueue->front = 0;
-	pqueue->count = 0;
-	pqueue->elem = (elem_type*) malloc(sizeof(elem_type) * MAX_ELEM);
+	pqueue->rear = 0;
+	//leave the last element as a symbol to judge the queue is full or empty, and the element don't storage data.
+	pqueue->elem = (elem_type*) malloc(sizeof(elem_type) * (MAX_ELEM + 1));
 	
 	return pqueue;
 }
 
 bool CirQueueEmpty(cir_queue queue)
 {
-	return !(queue->count);
+	return queue->front == queue->rear;
 }
 
 bool CirQueueFull(cir_queue queue)
 {
-	return queue->count == MAX_ELEM;
+	return (queue->rear + 1) % MAX_ELEM == queue->front;
 }
 
 bool CirQueueEnter(cir_queue queue, elem_type elem)
@@ -28,9 +29,7 @@ bool CirQueueEnter(cir_queue queue, elem_type elem)
 		return false;
 	}
 
-	int index = (queue->front + queue->count) % MAX_ELEM;
-	queue->elem[index] = elem;
-	queue->count++;
+	queue->elem[queue->rear++] = elem;
 	return true;
 }
 
@@ -41,17 +40,13 @@ elem_type CirQueueExit(cir_queue queue)
 		exit(0);
 	}
 
-	queue->count--;
-	elem_type elem =  queue->elem[queue->front];
-	queue->front = (queue->front + 1) % MAX_ELEM;
-
-	return elem;
+	return queue->elem[queue->front++];
 }
 
 void CirQueueClear(cir_queue queue)
 {
 	queue->front = 0;
-	queue->count = 0;
+	queue->rear = 0;
 }
 
 void CirQueueDestroy(cir_queue * queue)
