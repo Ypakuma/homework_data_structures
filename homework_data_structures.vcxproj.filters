@@ -30,7 +30,7 @@
     <ClInclude Include="list\linked_list_circularly_double\linked_list_cir_doub.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="stack\listed_stack\linked_stack.h">
+    <ClInclude Include="queue\cir_queue\cir_queue.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,7 +53,7 @@
     <ClCompile Include="list\linked_list_circularly_double\linked_list_cir_doub.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="stack\listed_stack\linked_stack.c">
+    <ClCompile Include="queue\cir_queue\cir_queue.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

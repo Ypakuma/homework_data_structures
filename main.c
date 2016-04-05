@@ -1,27 +1,36 @@
-#include "stack\listed_stack\linked_stack.h"
+#include "queue\cir_queue\cir_queue.h"
 
 int main(void)
 {
-	linked_stack stack;
-	stack = LinkedStackInit();
-	bool ans = LinkedStackEmpty(stack);
-	LinkedStackPush(&stack, 12);
-	ans = LinkedStackEmpty(stack);
+	cir_queue queue;
+	queue = CirQueueInit();
+	bool ans;
+	ans = CirQueueEmpty(queue);
+	CirQueueEnter(queue, 1);
+	ans = CirQueueEmpty(queue);
+	CirQueueEnter(queue, 2);
+	CirQueueEnter(queue, 3);
+	CirQueueEnter(queue, 4);
+	CirQueueEnter(queue, 5);
+	CirQueueEnter(queue, 6);
+	CirQueueEnter(queue, 7);
+	CirQueueEnter(queue, 8);
+	CirQueueEnter(queue, 9);
+	CirQueueEnter(queue, 10);
+	ans = CirQueueFull(queue);
 
-	LinkedStackPush(&stack, 123);
-	LinkedStackPush(&stack, 1234);
 
-	elemtype elem = LinkedStackPop(&stack);
-	elem = LinkedStackPop(&stack);
-	ans = LinkedStackEmpty(stack);
-	elem = LinkedStackPop(&stack);
-	ans = LinkedStackEmpty(stack);
+	int a;
+	a = CirQueueExit(queue);
+	ans = CirQueueFull(queue);
+	a = CirQueueExit(queue);
+	a = CirQueueExit(queue);
 
-	LinkedStackPush(&stack, 12);
-	LinkedStackPush(&stack, 123);
-	LinkedStackPush(&stack, 1234);
 
-	LinkedStackDestroy(&stack);
+	CirQueueClear(queue);
+	ans = CirQueueEmpty(queue);
+
+	CirQueueDestroy(&queue);
 
 	return 0;
 }
