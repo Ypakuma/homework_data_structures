@@ -1,8 +1,8 @@
 #include "seq_list.h"
 
-seq_list * SeqListInit (void)
+seq_list SeqListInit (void)
 {
-	seq_list * plist = (seq_list*) malloc(sizeof(seq_list));
+	struct seq_list_s * plist = (struct seq_list_s*) malloc(sizeof(struct seq_list_s));
 	if (!plist) {
 		printf("Fail to allocate memory.\n");
 		exit(0);
@@ -12,12 +12,12 @@ seq_list * SeqListInit (void)
 	return plist;
 }
 
-int SeqListLength(seq_list * list)
+int SeqListLength(seq_list list)
 {
 	return list->num_elem;
 }
 
-elem_type SeqListGet(seq_list * list, int index)
+seq_list_elemtype SeqListGet(seq_list list, int index)
 {
 	if (index >= 0 && index < list->num_elem) {
 		return list->elem[index];
@@ -26,7 +26,7 @@ elem_type SeqListGet(seq_list * list, int index)
 	exit(0);
 }
 
-int SeqListLocate(seq_list * list, elem_type elem)
+int SeqListLocate(seq_list list, seq_list_elemtype elem)
 {
 	for (int index = 0; index < list->num_elem; index++)
 		if (list->elem[index] == elem)
@@ -35,19 +35,19 @@ int SeqListLocate(seq_list * list, elem_type elem)
 	return -1;
 }
 
-elem_type SeqListFormer(seq_list * list, elem_type elem)
+seq_list_elemtype SeqListFormer(seq_list list, seq_list_elemtype elem)
 {
 	int loc = SeqListLocate(list, elem);
 	return SeqListGet(list, loc - 1);
 }
 
-elem_type SeqListLatter(seq_list * list, elem_type elem)
+seq_list_elemtype SeqListLatter(seq_list list, seq_list_elemtype elem)
 {
 	int loc = SeqListLocate(list, elem);
 	return SeqListGet(list, loc + 1);
 }
 
-bool SeqListInsert(seq_list * list, int index, elem_type elem)
+bool SeqListInsert(seq_list list, int index, seq_list_elemtype elem)
 {
 	if (list->num_elem == MAX_ELEM) {
 		printf("The list is full.\n");
@@ -70,7 +70,7 @@ bool SeqListInsert(seq_list * list, int index, elem_type elem)
 	return true;
 }
 
-void SeqListRemove(seq_list * list, int index)
+void SeqListRemove(seq_list list, int index)
 {
 	if (SeqListEmpty(list)) {
 		printf("The list is empty.\n");
@@ -85,7 +85,7 @@ void SeqListRemove(seq_list * list, int index)
 	list->num_elem--;
 }
 
-bool SeqListEmpty(seq_list * list)
+bool SeqListEmpty(seq_list list)
 {
 	if (list->num_elem == 0)
 		return true;
@@ -93,29 +93,29 @@ bool SeqListEmpty(seq_list * list)
 		return false;
 }
 
-void SeqListClear(seq_list * list)
+void SeqListClear(seq_list list)
 {
 	list->num_elem = 0;
 }
 
-void SeqListDestroy(seq_list * list)
+void SeqListDestroy(seq_list list)
 {
 	free(list);
 	list = NULL;
 }
 
-void SeqListAdd(seq_list * list, elem_type elem)
+void SeqListAdd(seq_list list, seq_list_elemtype elem)
 {
 	list->elem[list->num_elem] = elem;
 	list->num_elem++;
 }
 
-void SeqListDelete(seq_list * list)
+void SeqListDelete(seq_list list)
 {
 	list->num_elem--;
 }
 
-void SeqListCat(seq_list * list1, seq_list * list2)
+void SeqListCat(seq_list list1, seq_list list2)
 {
 	if ((list1->num_elem + list2->num_elem) > MAX_ELEM) {
 		printf("Too many elements.\n");
@@ -128,14 +128,14 @@ void SeqListCat(seq_list * list1, seq_list * list2)
 	}
 }
 
-seq_list * SeqListUnion(seq_list * list1, seq_list * list2)
+seq_list SeqListUnion(seq_list list1, seq_list list2)
 {
 	if ((list1->num_elem + list2->num_elem) > MAX_ELEM) {
 		printf("Too many elements.\n");
 		exit(0);
 	}
 
-	seq_list * new_list = SeqListInit();
+	seq_list new_list = SeqListInit();
 	int index1 = 0, index2 = 0;
 
 	while (index1 < list1->num_elem && index2 < list2->num_elem) {

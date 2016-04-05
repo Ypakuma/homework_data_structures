@@ -7,10 +7,10 @@
 #include <stdbool.h>
 #include "..\seq_list\seq_list.h"
 
-typedef int elem_type;
-typedef struct node {
-	elem_type elem;
-	struct node * next;
+typedef int linked_list_nohead_elemtype;
+typedef struct linked_list_nohead_node_s {
+	linked_list_nohead_elemtype elem;
+	struct linked_list_nohead_node_s * next;
 } linked_node, *linked_list;
 
 /********************************
@@ -41,7 +41,7 @@ linked_node * LinkedListNoHeadGet(linked_list list, int index);
 *			 elem: the element's value.
 * return:    a pointer to the element.
 ********************************/
-linked_node * LinkedListNoHeadLocate(linked_list list, elem_type elem);
+linked_node * LinkedListNoHeadLocate(linked_list list, linked_list_nohead_elemtype elem);
 
 /********************************
 * aim:       get a location's former location in a list.
@@ -57,7 +57,7 @@ linked_node * LinkedListNoHeadFormer(linked_list list, linked_node * locat);
 *			 elem: the element's value.
 * return:    a pointer to the latter element.
 ********************************/
-linked_node * LinkedListNoHeadLatter(linked_list list, elem_type elem);
+linked_node * LinkedListNoHeadLatter(linked_list list, linked_list_nohead_elemtype elem);
 
 /********************************
 * aim:       insert a element at a known location's latter location in a list.
@@ -65,7 +65,7 @@ linked_node * LinkedListNoHeadLatter(linked_list list, elem_type elem);
 *			 elem:  the element's value which will be inserted.
 * return:    bool value whether the operation is success or not.
 ********************************/
-bool LinkedListNoHeadInsert(linked_node * locat, elem_type elem);
+bool LinkedListNoHeadInsert(linked_node * locat, linked_list_nohead_elemtype elem);
 
 /********************************
 * aim:       delete a element at a known location in a list.
@@ -95,7 +95,7 @@ void LinkedListNoHeadDestroy(linked_list * list);
 *            elem: the element's value which will be added.
 * return:    void.
 ********************************/
-void LinkedListNoHeadAdd(linked_list * list, elem_type elem);
+void LinkedListNoHeadAdd(linked_list * list, linked_list_nohead_elemtype elem);
 
 /********************************
 * aim:       concatenate list2 to list1 without sort, and destroy list2.
@@ -121,4 +121,4 @@ void LinkedListNoHeadUnion(linked_list * list1, linked_list * list2);
 ********************************/
 void SeqToLinkedNoHead(seq_list * s_list, linked_list * l_list);
 
-#endif // !Linked_LIST_H
+#endif

@@ -1,5 +1,5 @@
-## Linked List Head
-#### These files include some  fundamental functionss linked list with head.
+## Linked List with Head
+#### These files include some  fundamental functions about list with head.
 - LinkedListHeadAdd
  - add a new element in a list by sort.
 - LinkedListHeadCat

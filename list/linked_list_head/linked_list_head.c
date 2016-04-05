@@ -46,7 +46,7 @@ linked_node * LinkedListHeadGet(linked_list list, int index)
 	return NULL;
 }
 
-linked_node * LinkedListHeadLocate(linked_list list, elem_type elem)
+linked_node * LinkedListHeadLocate(linked_list list, linked_list_head_elemtype elem)
 {
 	if (LinkedListHeadEmpty(list)) {
 		printf("Empty list.\n");
@@ -85,7 +85,7 @@ linked_node * LinkedListHeadFormer(linked_list list, linked_node * locat)
 	return NULL;
 }
 
-linked_node * LinkedListHeadLatter(linked_list list, elem_type elem)
+linked_node * LinkedListHeadLatter(linked_list list, linked_list_head_elemtype elem)
 {
 	if (LinkedListHeadEmpty(list)) {
 		printf("Empty list.\n");
@@ -107,7 +107,7 @@ linked_node * LinkedListHeadLatter(linked_list list, elem_type elem)
 	return NULL;
 }
 
-void LinkedListHeadInsert(linked_node * locat, elem_type elem)
+void LinkedListHeadInsert(linked_node * locat, linked_list_head_elemtype elem)
 {
 	linked_node * pnode = (linked_node *) malloc(sizeof(linked_node));
 	if (!pnode) {
@@ -170,7 +170,7 @@ void LinkedListHeadDestroy(linked_list list)
 	}
 }
 
-void LinkedListHeadAdd(linked_list list, elem_type elem)
+void LinkedListHeadAdd(linked_list list, linked_list_head_elemtype elem)
 {
 	if (LinkedListHeadEmpty(list)) {
 		linked_node * pnode = (linked_node *) malloc(sizeof(linked_node));
@@ -230,7 +230,7 @@ void LinkedListHeadUnion(linked_list * list1, linked_list * list2)
 	list2 = NULL;
 }
 
-void SeqToLinkedHead(seq_list * s_list, linked_list l_list)
+void SeqToLinkedHead(seq_list s_list, linked_list l_list)
 {
 	int num = s_list->num_elem;
 	while (num) {

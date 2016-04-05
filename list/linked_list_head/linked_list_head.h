@@ -7,10 +7,10 @@
 #include <stdbool.h>
 #include "..\seq_list\seq_list.h"
 
-typedef int elem_type;
-typedef struct node{
-	elem_type elem;
-	struct node * next;
+typedef int linked_list_head_elemtype;
+typedef struct linked_list_head_node_s{
+	linked_list_head_elemtype elem;
+	struct linked_list_head_node_s * next;
 } linked_node,  *linked_list;
 
 /********************************
@@ -41,7 +41,7 @@ linked_node * LinkedListHeadGet(linked_list list, int index);
 *			 elem: the element's value.
 * return:    a pointer to the element.
 ********************************/
-linked_node * LinkedListHeadLocate(linked_list list, elem_type elem);
+linked_node * LinkedListHeadLocate(linked_list list, linked_list_head_elemtype elem);
 
 /********************************
 * aim:       get a location's former location in a list.
@@ -57,7 +57,7 @@ linked_node * LinkedListHeadFormer(linked_list list, linked_node * locat);
 *			 elem: the element's value.
 * return:    a pointer to the latter element.
 ********************************/
-linked_node * LinkedListHeadLatter(linked_list list, elem_type elem);
+linked_node * LinkedListHeadLatter(linked_list list, linked_list_head_elemtype elem);
 
 /********************************
 * aim:       insert a element at a known location's latter location in a list.
@@ -65,7 +65,7 @@ linked_node * LinkedListHeadLatter(linked_list list, elem_type elem);
 *			 elem:  the element's value which will be inserted.
 * return:    void.
 ********************************/
-void LinkedListHeadInsert(linked_node * locat, elem_type elem);
+void LinkedListHeadInsert(linked_node * locat, linked_list_head_elemtype elem);
 
 /********************************
 * aim:       delete a element at a known location in a list.
@@ -102,7 +102,7 @@ void LinkedListHeadDestroy(linked_list list);
 *            elem: the element's value which will be added.
 * return:    void.
 ********************************/
-void LinkedListHeadAdd(linked_list list, elem_type elem);
+void LinkedListHeadAdd(linked_list list, linked_list_head_elemtype elem);
 
 /********************************
 * aim:       concatenate list2 to list1 without sort, and destroy list2.
@@ -128,4 +128,4 @@ void LinkedListHeadUnion(linked_list * list1, linked_list * list2);
 ********************************/
 void SeqToLinkedHead(seq_list * s_list, linked_list l_list);
 
-#endif // !Linked_LIST_H
+#endif

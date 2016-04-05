@@ -2,11 +2,11 @@
 
 seq_stack SeqStackInit(void)
 {
-	seq_stack pstack = (seq_stack) malloc(sizeof(struct stack));
+	seq_stack pstack = (seq_stack) malloc(sizeof(struct seq_stack_s));
 
 	pstack->top = 0;
 	pstack->len = MAX_ELEM;
-	pstack->elem = (elemtype*) malloc(sizeof(elemtype) * pstack->len);
+	pstack->elem = (linked_stack_elemtype*) malloc(sizeof(linked_stack_elemtype) * pstack->len);
 	
 	return pstack;
 }
@@ -27,7 +27,7 @@ bool SeqStackFull(seq_stack stack)
 		return false;
 }
 
-bool SeqStackPush(seq_stack stack, elemtype elem)
+bool SeqStackPush(seq_stack stack, linked_stack_elemtype elem)
 {
 	if (SeqStackFull(stack)) {
 		printf("Full stack.\n");
@@ -39,7 +39,7 @@ bool SeqStackPush(seq_stack stack, elemtype elem)
 	return true;
 }
 
-elemtype SeqStackPop(seq_stack stack)
+linked_stack_elemtype SeqStackPop(seq_stack stack)
 {
 	if (SeqStackEmpty(stack)) {
 		printf("Empty stack.\n");

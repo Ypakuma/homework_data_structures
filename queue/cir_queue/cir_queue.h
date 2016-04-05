@@ -7,11 +7,11 @@
 
 #define MAX_ELEM 10
 
-typedef int elem_type;
-typedef struct queue {
+typedef int cir_queue_elemtype;
+typedef struct cir_queue_s {
 	int front;
 	int rear;
-	elem_type * elem;
+	cir_queue_elemtype * elem;
 } *cir_queue;
 
 /********************************
@@ -41,14 +41,14 @@ bool CirQueueFull(cir_queue queue);
 *            elem:  the element.
 * return:    a bool value whether the operator is success or not.
 ********************************/
-bool CirQueueEnter(cir_queue queue, elem_type elem);
+bool CirQueueEnter(cir_queue queue, cir_queue_elemtype elem);
 
 /********************************
 * aim:       make a element out of the queue.
 * parameter: queue: the queue.
 * return:    the value of the element which will be exited.
 ********************************/
-elem_type CirStackExit(cir_queue queue);
+cir_queue_elemtype CirQueueExit(cir_queue queue);
 
 /********************************
 * aim:       clear a queue.

@@ -1,5 +1,5 @@
-## Linked List without Head Node
-#### These files include some  fundamental functionss linked list without head.
+## Linked List without Head
+#### These files include some  fundamental functions about list without head.
 - LinkedListNoHeadInit
  - initialize a list.
 - LinkedListNoHeadLength

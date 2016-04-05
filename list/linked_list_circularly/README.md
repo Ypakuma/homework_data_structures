@@ -1,5 +1,5 @@
 ## Circularly Linked List
-#### These files include some  fundamental functionss circularly linked list.
+#### These files include some  fundamental functions about circularly linked list.
 - LinkedListCirInit
  - initialize a list.
 - LinkedListCirEmpty
@@ -29,7 +29,7 @@
 - LinkedListCirUnion
  - union list2 to list1 by sort, and destory list2.
 - SeqToLinkedCir
- - restore a sequential list to a linked list without head node.
+ - restore a sequential list to a circularly linked list.
 
 ## 循环链表
 #### 这些文件包括了循环链表的一些基本操作函数。
@@ -62,7 +62,7 @@
 - LinkedListCirUnion
  - 有序地把list2合并到list1，并销毁list2。
 - SeqToLinkedCir
- - 把一个线性表的元素转存到一个带头结点的链表中。
+ - 把一个线性表的元素转存到一个循环链表中。
 
 
 

@@ -6,11 +6,11 @@
 #include <stdbool.h>
 #include "..\seq_list\seq_list.h"
 
-typedef int elem_type;
-typedef struct node {
-	elem_type elem;
-	struct node * next;
-	struct node * prior;
+typedef int linked_list_cir_doub_elemtype;
+typedef struct linked_list_cir_node_s {
+	linked_list_cir_doub_elemtype elem;
+	struct linked_list_cir_node_s * next;
+	struct linked_list_cir_node_s * prior;
 } cir_doub_node, *cir_doub_list;
 
 /********************************
@@ -33,7 +33,7 @@ bool LinkedListCirDoubEmpty(cir_doub_list list);
 *			 elem:  the element's value which will be inserted.
 * return:    void.
 ********************************/
-void LinkedListCirDoubInsert(cir_doub_node * locat, elem_type elem);
+void LinkedListCirDoubInsert(cir_doub_node * locat, linked_list_cir_doub_elemtype elem);
 
 /********************************
 * aim:       add a new element in a list by sort.
@@ -41,7 +41,7 @@ void LinkedListCirDoubInsert(cir_doub_node * locat, elem_type elem);
 *            elem: the element's value which will be added.
 * return:    void.
 ********************************/
-void LinkedListCirDoubAdd(cir_doub_list list, elem_type elem);
+void LinkedListCirDoubAdd(cir_doub_list list, linked_list_cir_doub_elemtype elem);
 
 /********************************
 * aim:       clear all the elements in a list.
@@ -79,7 +79,7 @@ cir_doub_node * LinkedListCirDoubGet(cir_doub_list list, int index);
 *			 elem: the element's value.
 * return:    a pointer to the element.
 ********************************/
-cir_doub_node * LinkedListCirDoubLocate(cir_doub_list list, elem_type elem);
+cir_doub_node * LinkedListCirDoubLocate(cir_doub_list list, linked_list_cir_doub_elemtype elem);
 
 /********************************
 * aim:       get how many a list's elements.
@@ -105,7 +105,7 @@ void LinkedListCirDoubCat(cir_doub_list list1_t, cir_doub_list * list2_t);
 void LinkedListCirDoubUnion(cir_doub_list list1, cir_doub_list * list2);
 
 /********************************
-* aim:       restore a sequential list to a linked list which have head node.
+* aim:       restore a sequential list to a circularly double linked list.
 * parameter: s_list: a pointer to the sequential list which will be changed.
 *            l_list: the linked list.
 * return:    void

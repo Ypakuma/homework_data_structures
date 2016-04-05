@@ -19,7 +19,7 @@ bool LinkedListCirEmpty(cir_doub_list list_t)
 	return list_t->next == list_t;
 }
 
-void LinkedListCirInsert(cir_doub_list * list_t, cir_doub_node * locat, elem_type elem)
+void LinkedListCirInsert(cir_doub_list * list_t, cir_doub_node * locat, linked_list_cir_elemtype elem)
 {
 	cir_doub_node * pnode = (cir_doub_node *) malloc(sizeof(cir_doub_node));
 	if (!pnode) {
@@ -35,7 +35,7 @@ void LinkedListCirInsert(cir_doub_list * list_t, cir_doub_node * locat, elem_typ
 		(*list_t) = pnode;
 }
 
-void LinkedListCirAdd(cir_doub_list * list_t, elem_type elem)
+void LinkedListCirAdd(cir_doub_list * list_t, linked_list_cir_elemtype elem)
 {
 	if (LinkedListCirEmpty(*list_t)) {
 		LinkedListCirInsert(list_t, (*list_t), elem);
@@ -96,7 +96,7 @@ cir_doub_node * LinkedListCirFormer(cir_doub_list list_t, cir_doub_node * locat)
 	}
 }
 
-cir_doub_node * LinkedListCirLatter(cir_doub_list list_t, elem_type elem)
+cir_doub_node * LinkedListCirLatter(cir_doub_list list_t, linked_list_cir_elemtype elem)
 {
 	if (LinkedListCirEmpty(list_t)) {
 		printf("Empty list.\n");
@@ -157,7 +157,7 @@ cir_doub_node * LinkedListCirGet(cir_doub_list list_t, int index)
 	return NULL;
 }
 
-cir_doub_node * LinkedListCirLocate(cir_doub_list list_t, elem_type elem)
+cir_doub_node * LinkedListCirLocate(cir_doub_list list_t, linked_list_cir_elemtype elem)
 {
 	if (LinkedListCirEmpty(list_t)) {
 		printf("Empty list.\n");
@@ -232,7 +232,7 @@ void LinkedListCirUnion(cir_doub_list * list1_t, cir_doub_list * list2_t)
 	(*list2_t) = NULL;
 }
 
-void SeqToLinkedCir(seq_list * s_list, cir_doub_list * l_list_t)
+void SeqToLinkedCir(seq_list s_list, cir_doub_list * l_list_t)
 {
 	int num = s_list->num_elem;
 	while (num) {

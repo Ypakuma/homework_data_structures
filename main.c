@@ -1,36 +1,33 @@
-#include "queue\cir_queue\cir_queue.h"
+#include "queue\linked_queue\linked_queue.h"
 
 int main(void)
 {
-	cir_queue queue;
-	queue = CirQueueInit();
+	linked_queue queue;
+	queue = LinkedQueueInit();
 	bool ans;
-	ans = CirQueueEmpty(queue);
-	CirQueueEnter(queue, 1);
-	ans = CirQueueEmpty(queue);
-	CirQueueEnter(queue, 2);
-	CirQueueEnter(queue, 3);
-	CirQueueEnter(queue, 4);
-	CirQueueEnter(queue, 5);
-	CirQueueEnter(queue, 6);
-	CirQueueEnter(queue, 7);
-	CirQueueEnter(queue, 8);
-	CirQueueEnter(queue, 9);
-	CirQueueEnter(queue, 10);
-	ans = CirQueueFull(queue);
+	ans = LinkedQueueEmpty(queue);
+	LinkedQueueEnter(queue, 1);
+	ans = LinkedQueueEmpty(queue);
+	LinkedQueueEnter(queue, 2);
+	LinkedQueueEnter(queue, 3);
+	LinkedQueueEnter(queue, 4);
+	LinkedQueueEnter(queue, 5);
+	LinkedQueueEnter(queue, 6);
+	LinkedQueueEnter(queue, 7);
+	LinkedQueueEnter(queue, 8);
+	LinkedQueueEnter(queue, 9);
+	LinkedQueueEnter(queue, 10);
 
 
 	int a;
-	a = CirQueueExit(queue);
-	ans = CirQueueFull(queue);
-	a = CirQueueExit(queue);
-	a = CirQueueExit(queue);
+	a = LinkedQueueExit(queue);
+	a = LinkedQueueExit(queue);
+	a = LinkedQueueExit(queue);
 
 
-	CirQueueClear(queue);
-	ans = CirQueueEmpty(queue);
+	ans = LinkedQueueEmpty(queue);
 
-	CirQueueDestroy(&queue);
+	LinkedQueueDestroy(&queue);
 
 	return 0;
 }

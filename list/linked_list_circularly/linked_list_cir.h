@@ -6,11 +6,11 @@
 #include <stdbool.h>
 #include "..\seq_list\seq_list.h"
 
-typedef int elem_type;
+typedef int linked_list_cir_elemtype;
 
-typedef struct node {
-	elem_type elem;
-	struct node * next;
+typedef struct linked_list_cir_node_s {
+	linked_list_cir_elemtype elem;
+	struct linked_list_cir_node_s * next;
 } cir_doub_node, *cir_doub_list;
 
 /********************************
@@ -34,7 +34,7 @@ bool LinkedListCirEmpty(cir_doub_list list_t);
 *			 elem:    the element's value which will be inserted.
 * return:    void.
 ********************************/
-void LinkedListCirInsert(cir_doub_list * list_t, cir_doub_node * locat, elem_type elem);
+void LinkedListCirInsert(cir_doub_list * list_t, cir_doub_node * locat, linked_list_cir_elemtype elem);
 
 /********************************
 * aim:       add a new element in a list by sort.
@@ -42,7 +42,7 @@ void LinkedListCirInsert(cir_doub_list * list_t, cir_doub_node * locat, elem_typ
 *            elem:   the element's value which will be added.
 * return:    void.
 ********************************/
-void LinkedListCirAdd(cir_doub_list * list_t, elem_type elem);
+void LinkedListCirAdd(cir_doub_list * list_t, linked_list_cir_elemtype elem);
 
 /********************************
 * aim:       clear all the elements in a list.
@@ -72,7 +72,7 @@ cir_doub_node * LinkedListCirFormer(cir_doub_list list_t, cir_doub_node * locat)
 *			 elem:   the element's value.
 * return:    a pointer to the latter element.
 ********************************/
-cir_doub_node * LinkedListCirLatter(cir_doub_list list_t, elem_type elem);
+cir_doub_node * LinkedListCirLatter(cir_doub_list list_t, linked_list_cir_elemtype elem);
 
 /********************************
 * aim:       delete a element at a known index(from 1) in a list.
@@ -96,7 +96,7 @@ cir_doub_node * LinkedListCirGet(cir_doub_list list_t, int index);
 *			 elem:   the element's value.
 * return:    a pointer to the element.
 ********************************/
-cir_doub_node * LinkedListCirLocate(cir_doub_list list_t, elem_type elem);
+cir_doub_node * LinkedListCirLocate(cir_doub_list list_t, linked_list_cir_elemtype elem);
 
 /********************************
 * aim:       get how many a list's elements.
@@ -122,7 +122,7 @@ void LinkedListCirCat(cir_doub_list * list1_t, cir_doub_list * list2_t);
 void LinkedListCirUnion(cir_doub_list * list1_t, cir_doub_list * list2_t);
 
 /********************************
-* aim:       restore a sequential list to a linked list which have head node.
+* aim:       restore a sequential list to a circularly linked list.
 * parameter: s_list: a pointer to the sequential list which will be changed.
 *            l_list: a pointer to the linked list.
 * return:    void

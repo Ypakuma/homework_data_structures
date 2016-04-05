@@ -42,7 +42,7 @@ linked_node * LinkedListNoHeadGet(linked_list list, int index)
 	return NULL;
 }
 
-linked_node * LinkedListNoHeadLocate(linked_list list, elem_type elem)
+linked_node * LinkedListNoHeadLocate(linked_list list, linked_list_nohead_elemtype elem)
 {
 	if (LinkedListNoHeadEmpty(list)) {
 		printf("Empty list.\n");
@@ -83,7 +83,7 @@ linked_node * LinkedListNoHeadFormer(linked_list list, linked_node * locat)
 	return NULL;
 }
 
-linked_node * LinkedListNoHeadLatter(linked_list list, elem_type elem)
+linked_node * LinkedListNoHeadLatter(linked_list list, linked_list_nohead_elemtype elem)
 {
 	if (LinkedListNoHeadEmpty(list)) {
 		printf("Empty list.\n");
@@ -106,7 +106,7 @@ linked_node * LinkedListNoHeadLatter(linked_list list, elem_type elem)
 	return NULL;
 }
 
-bool LinkedListNoHeadInsert(linked_node * locat, elem_type elem)
+bool LinkedListNoHeadInsert(linked_node * locat, linked_list_nohead_elemtype elem)
 {
 	linked_node * pnode = (linked_node *) malloc(sizeof(linked_node));
 	if (!pnode) {
@@ -168,7 +168,7 @@ void LinkedListNoHeadDestroy(linked_list * list)
 	}
 }
 
-void LinkedListNoHeadAdd(linked_list * list, elem_type elem)
+void LinkedListNoHeadAdd(linked_list * list, linked_list_nohead_elemtype elem)
 {
 	if (LinkedListNoHeadEmpty(*list) || elem <= (*list)->elem) {
 		linked_node * pnode = (linked_node *) malloc(sizeof(linked_node));

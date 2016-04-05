@@ -7,11 +7,11 @@
 
 #define MAX_ELEM 100
 
-typedef int elemtype;
-typedef struct stack{
+typedef int linked_stack_elemtype;
+typedef struct seq_stack_s{
 	int top;
 	int len;
-	elemtype * elem;
+	linked_stack_elemtype * elem;
 } *seq_stack;
 
 /********************************
@@ -41,14 +41,14 @@ bool SeqStackFull(seq_stack stack);
 *            elem:  the element.
 * return:    a bool value whether the operator is success or not.
 ********************************/
-bool SeqStackPush(seq_stack stack, elemtype elem);
+bool SeqStackPush(seq_stack stack, linked_stack_elemtype elem);
 
 /********************************
 * aim:       pop a element out of the stack.
 * parameter: stack: the stack.
 * return:    the value of the element which will be poped.
 ********************************/
-elemtype SeqStackPop(seq_stack stack);
+linked_stack_elemtype SeqStackPop(seq_stack stack);
 
 /********************************
 * aim:       clear a stack.

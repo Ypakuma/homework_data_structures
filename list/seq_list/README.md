@@ -1,5 +1,5 @@
 ## Sequential List
-#### These files include some sequential list's fundamental functionss.
+#### These files include some fundamental functions about sequential list.
 
 - SequentialListAdd
  - add a new element in a list's tail.

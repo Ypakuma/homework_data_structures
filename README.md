@@ -2,7 +2,50 @@
 - Exercise and familiar with Github.
 - Save my data structures homework in college.
 
+```
+data_structures
+       │
+       ├─── list
+       │     │
+       │     ├──linked_list_circularl
+       │     ├──linked_list_circularly_double
+       │     ├──linked_list_head
+       │     ├──linked_list_nohead
+       │     └──seq_list
+       │
+       ├── queue
+       │     │
+       │     ├──linked_queue
+       │     └──cir_queue
+       │
+       └── stack
+             │
+             ├──linked_stack
+             └──seq_stack
+```
 
 ### 这个小项目有下面两个目的
 - 练习并熟悉使用Github。
 - 保存我的大学数据结构作业。
+
+```
+数据结构
+   │
+   ├─── 顺序表
+   │     │
+   │     ├──循环链表
+   │     ├──双向循环链表
+   │     ├──带头结点的单链表
+   │     ├──不带头结点的单链表
+   │     └──线性表
+   │
+   ├─── 队列
+   │     │
+   │     ├──链队列
+   │     └──循环队列
+   │
+   └─── 栈
+         │
+         ├──链栈
+         └──线性栈
+```
