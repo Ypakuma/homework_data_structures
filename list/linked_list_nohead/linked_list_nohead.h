@@ -115,10 +115,10 @@ void LinkedListNoHeadUnion(linked_list * list1, linked_list * list2);
 
 /********************************
 * aim:       restore a sequential list to a linked list without head node.
-* parameter: s_list: a pointer to the sequential list which will be changed.
+* parameter: s_list: the sequential list which will be changed.
 *            l_list: a pointer to the address of linked list.
 * return:    void
 ********************************/
-void SeqToLinkedNoHead(seq_list * s_list, linked_list * l_list);
+void SeqToLinkedNoHead(seq_list s_list, linked_list * l_list);
 
 #endif

@@ -245,7 +245,7 @@ void LinkedListNoHeadUnion(linked_list * list1, linked_list * list2)
 	*list2 = NULL;
 }
 
-void SeqToLinkedNoHead(seq_list * s_list, linked_list * l_list)
+void SeqToLinkedNoHead(seq_list s_list, linked_list * l_list)
 {
 	LinkedListNoHeadDestroy(l_list);
 
