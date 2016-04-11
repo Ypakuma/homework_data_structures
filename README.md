@@ -16,12 +16,17 @@ data_structures
        ├── queue
        │     │
        │     ├──linked_queue
-       │     └──cir_queue
+       │     ├──cir_queue
+       │     └──Yang Hui's Triangle(Pascal's Triangle)
        │
-       └── stack
-             │
-             ├──linked_stack
-             └──seq_stack
+       ├── stack
+       │     │
+       │     ├──linked_stack
+       │     └──seq_stack
+       │
+       ├── string
+       │     │
+       │     └──KMP
 ```
 
 ### 这个小项目有下面两个目的
@@ -42,10 +47,16 @@ data_structures
    ├─── 队列
    │     │
    │     ├──链队列
-   │     └──循环队列
+   │     ├──循环队列
+   │     └──杨辉三角
    │
-   └─── 栈
-         │
-         ├──链栈
-         └──线性栈
+   ├─── 栈
+   │    │
+   │    ├──链栈
+   │    └──线性栈
+   │
+   ├─── 串
+   │    │
+   │    └──KMP字符串快速匹配算法
+
 ```

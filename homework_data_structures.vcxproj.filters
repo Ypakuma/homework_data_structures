@@ -45,6 +45,12 @@
     <ClInclude Include="queue\application\yanghui_triangle.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="string\application\KMP.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="string\homework_string.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="list\linked_list_head\linked_list_head.c">
@@ -78,6 +84,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="queue\application\yanghui_triangle.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="string\application\KMP.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="string\homework_string.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

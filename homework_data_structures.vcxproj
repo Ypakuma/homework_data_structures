@@ -152,6 +152,8 @@
     <ClInclude Include="queue\linked_queue\linked_queue.h" />
     <ClInclude Include="stack\linked_stack\linked_stack.h" />
     <ClInclude Include="stack\seq_stack\seq_stack.h" />
+    <ClInclude Include="string\application\KMP.h" />
+    <ClInclude Include="string\homework_string.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="list\linked_list_circularly\linked_list_cir.c" />
@@ -165,6 +167,8 @@
     <ClCompile Include="queue\linked_queue\linked_queue.c" />
     <ClCompile Include="stack\linked_stack\linked_stack.c" />
     <ClCompile Include="stack\seq_stack\seq_stack.c" />
+    <ClCompile Include="string\application\KMP.c" />
+    <ClCompile Include="string\homework_string.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
