@@ -18,8 +18,11 @@ int * KMP_create_next_array(char * string_matched)
 	next[0] = -1;
 	next[1] = 0;
 
-	for (int i = 2; i < len; i++)
+	for (int i = 2; i < len; i++) {
 		next[i] = KMP_get_next_value(string_matched, next, i - 1, next[i - 1]);
+		if (string_matched[i] == string_matched[next[i]])
+			next[i] = next[next[i]];
+	}
 
 	return next;
 }
