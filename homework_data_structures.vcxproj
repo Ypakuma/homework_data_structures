@@ -154,6 +154,7 @@
     <ClInclude Include="stack\seq_stack\seq_stack.h" />
     <ClInclude Include="string\application\KMP.h" />
     <ClInclude Include="string\homework_string.h" />
+    <ClInclude Include="tree\linked_binary_tree\linked_binary_tree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="list\linked_list_circularly\linked_list_cir.c" />
@@ -169,6 +170,7 @@
     <ClCompile Include="stack\seq_stack\seq_stack.c" />
     <ClCompile Include="string\application\KMP.c" />
     <ClCompile Include="string\homework_string.c" />
+    <ClCompile Include="tree\linked_binary_tree\linked_binary_tree.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
