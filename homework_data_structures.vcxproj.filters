@@ -51,7 +51,10 @@
     <ClInclude Include="string\homework_string.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="tree\linked_binary_tree\linked_binary_tree.h">
+    <ClInclude Include="tree\linked_binary_tree\linked_binary_tree_tri.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="tree\seq_binary_tree\seq_binary_tree.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -95,7 +98,10 @@
     <ClCompile Include="string\homework_string.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="tree\linked_binary_tree\linked_binary_tree.c">
+    <ClCompile Include="tree\linked_binary_tree\linked_binary_tree_tri.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="tree\seq_binary_tree\seq_binary_tree.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

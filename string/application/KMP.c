@@ -20,10 +20,11 @@ int * KMP_create_next_array(char * string_matched)
 
 	for (int i = 2; i < len; i++) {
 		next[i] = KMP_get_next_value(string_matched, next, i - 1, next[i - 1]);
+	}
+	for (int i = 1; i < len; i++) {
 		if (string_matched[i] == string_matched[next[i]])
 			next[i] = next[next[i]];
 	}
-
 	return next;
 }
 
@@ -49,8 +50,9 @@ int KMP_match(char * string_aimed, char * string_matched, int * next)
 			i++;
 			j++;
 		}
-		else if (i == 0) {
+		else if (next[i] == -1) {
 			j++;
+			i = 0;
 		}
 		else {
 			i = next[i];

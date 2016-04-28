@@ -1,2 +1,5 @@
-﻿  KMP.c
+﻿  linked_binary_tree_tri.c
+m:\code\homework\homework_data_structures\tree\linked_binary_tree\linked_binary_tree_tri.c(83): warning C4133: “初始化”: 从“linked_binary_tree_node_s *”到“linked_binary_tree_elemtype *”的类型不兼容
+m:\code\homework\homework_data_structures\tree\linked_binary_tree\linked_binary_tree_tri.c(93): warning C4133: “初始化”: 从“linked_binary_tree_node_s *”到“linked_binary_tree_elemtype *”的类型不兼容
+m:\code\homework\homework_data_structures\tree\linked_binary_tree\linked_binary_tree_tri.c(103): warning C4133: “初始化”: 从“linked_binary_tree_node_s *”到“linked_binary_tree_elemtype *”的类型不兼容
   homework_data_structures.vcxproj -> M:\code\homework\homework_data_structures\Debug\homework_data_structures.exe

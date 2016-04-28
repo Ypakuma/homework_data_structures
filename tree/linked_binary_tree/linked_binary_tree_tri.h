@@ -1,19 +1,17 @@
-#ifndef LINKED_BINARY_TREE_H
-#define LINKED_BINARY_TREE_H
+#ifndef LINKED_BINARY_TREE_TRI_H
+#define LINKED_BINARY_TREE_TRI_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "..\..\stack\seq_stack\seq_stack.h"
 
 typedef int linked_binary_tree_elemtype;
 typedef struct linked_binary_tree_node_s {
 	linked_binary_tree_elemtype elem;
 	struct linked_binary_tree_node_s * lchild;
 	struct linked_binary_tree_node_s * rchild;
+	struct linked_binary_tree_node_s * parent;
 } linked_binary_tree_node, *linked_binary_tree;
-
-typedef linked_binary_tree_node* linked_stack_elemtype;
 
 /********************************
 * aim:       initialize a binary tree's node, and the function usually be used by other function.
@@ -47,13 +45,6 @@ bool LinkedBinaryTreeAddChildL(linked_binary_tree_node * node, linked_binary_tre
 bool LinkedBinaryTreeAddChildR(linked_binary_tree_node * node, linked_binary_tree_elemtype elem);
 
 /********************************
-* aim:       judge a tree node is empty or not.
-* parameter: node: the tree node.
-* return:    bool value whether tree node is empty or not.
-********************************/
-bool LinkedBinaryTreeEmpty(linked_binary_tree_node * node);
-
-/********************************
 * aim:       judge a tree node is leaf or not.
 * parameter: node: the tree node.
 * return:    bool value whether tree node is leaf or not.
@@ -61,26 +52,32 @@ bool LinkedBinaryTreeEmpty(linked_binary_tree_node * node);
 bool LinkedBinaryTreeLeaf(linked_binary_tree_node * node);
 
 /********************************
+* aim:       get a tree's depth.
+* parameter: node: the tree node.
+* return:    the number of the tree's depth.
+********************************/
+int LinkedBinaryTreeGetDepth(linked_binary_tree_node * node);
+
+/********************************
 * aim:       get a tree node's right child.
 * parameter: node: the tree node.
-* return:    the value of the node's right child.
+* return:    a pointer to the node's right child.
 ********************************/
-linked_binary_tree_elemtype LinkedBinaryGetChildR(linked_binary_tree_node * node);
+linked_binary_tree_elemtype * LinkedBinaryTreeGetChildR(linked_binary_tree_node * node);
 
 /********************************
 * aim:       get a tree node's left child.
 * parameter: node: the tree node.
-* return:    the value of the node's left child.
+* return:    a pointer to the node's left child.
 ********************************/
-linked_binary_tree_elemtype LinkedBinaryGetChildL(linked_binary_tree_node * node);
+linked_binary_tree_elemtype * LinkedBinaryTreeGetChildL(linked_binary_tree_node * node);
 
 /********************************
-* aim:       add a right child after a tree node.
-* parameter: node: the tree node which will have a right child.
-*            elem: the value of the child.
-* return:    bool value whether the operation is success or not.
+* aim:       get a tree node's parent.
+* parameter: node: the tree node.
+* return:    a pointer to the node's left child.
 ********************************/
-void LinkedBinaryTreeChangeValue(linked_binary_tree_node * node, linked_binary_tree_elemtype elem);
+linked_binary_tree_elemtype * LinkedBinaryTreeGetParent(linked_binary_tree_node * node);
 
 /********************************
 * aim:       destroy a tree node and its all subtrees.
@@ -91,15 +88,30 @@ void LinkedBinaryTreeDestroy(linked_binary_tree_node ** node);
 
 /********************************
 * aim:       destroy a tree's all subtrees.
-* parameter: node: the tree node which will be cleared.
+* parameter: node: a pointer to the tree node which will be cleared.
 * return:    void.
 ********************************/
-void LinkedBinaryTreeClear(linked_binary_tree_node * node);
+void LinkedBinaryTreeClear(linked_binary_tree_node ** node);
 
 /********************************
-* aim:       traverse a tree by pre order(parents -> left child -> right child).
-* parameter: node: the tree node which will be cleared.
+* aim:       traverse a tree by pre order(parent -> left child -> right child).
+* parameter: tree: the tree.
 * return:    void.
 ********************************/
 void LinkedBinaryTreeTraversePLR(linked_binary_tree tree);
+
+/********************************
+* aim:       traverse a tree by inner order(left child -> parent -> right child).
+* parameter: tree: the tree.
+* return:    void.
+********************************/
+void LinkedBinaryTreeTraverseLPR(linked_binary_tree tree);
+
+/********************************
+* aim:       traverse a tree by post order(left child -> right child -> parent).
+* parameter: tree: the tree.
+* return:    void.
+********************************/
+void LinkedBinaryTreeTraverseLRP(linked_binary_tree tree);
+
 #endif
