@@ -9,7 +9,7 @@
  - clear all the elements in a list.
 - SequentialListDelete
  - delete a  element in a list's tail.
-- SequentialLisDdestroy
+- SequentialListDestroy
  - destroy a list.
 - SequentialListEmpty
  - judge a list is empty or not.

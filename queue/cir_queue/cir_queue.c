@@ -3,6 +3,10 @@
 cir_queue CirQueueInit(void)
 {
 	cir_queue pqueue = (cir_queue) malloc(sizeof(struct cir_queue_s));
+	if (!pqueue) {
+		printf("Fail to allocate memory.\n");
+		exit(0);
+	}
 
 	pqueue->front = 0;
 	pqueue->rear = 0;

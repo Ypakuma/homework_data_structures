@@ -29,9 +29,9 @@ bool LinkedStackEmpty(linked_stack stack);
 * aim:       push a element into the stack.
 * parameter: stack: the address of stack.
 *            elem:  the element.
-* return:    a bool value whether the operator is success or not.
+* return:    void.
 ********************************/
-bool LinkedStackPush(linked_stack * stack, linked_stack_elemtype elem);
+void LinkedStackPush(linked_stack * stack, linked_stack_elemtype elem);
 
 /********************************
 * aim:       pop a element out of the stack.

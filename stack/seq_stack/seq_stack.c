@@ -3,10 +3,18 @@
 seq_stack SeqStackInit(void)
 {
 	seq_stack pstack = (seq_stack) malloc(sizeof(struct seq_stack_s));
+	if (!pstack) {
+		printf("Fail to allocate memory.\n");
+		exit(0);
+	}
 
 	pstack->top = 0;
 	pstack->len = MAX_ELEM;
 	pstack->elem = (seq_stack_elemtype*) malloc(sizeof(seq_stack_elemtype) * pstack->len);
+	if (!pstack) {
+		printf("Fail to allocate memory.\n");
+		exit(0);
+	}
 	
 	return pstack;
 }

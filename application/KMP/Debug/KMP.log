@@ -1,0 +1,9 @@
+﻿  homework_string.c
+m:\code\homework\homework_data_structures\application\kmp\string\homework_string.c(13): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 参见“strcpy”的声明
+m:\code\homework\homework_data_structures\application\kmp\string\homework_string.c(21): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 参见“strcpy”的声明
+  main.c
+  KMP.c
+  正在生成代码...
+  KMP.vcxproj -> M:\code\homework\homework_data_structures\application\KMP\Debug\KMP.exe

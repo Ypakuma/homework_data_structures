@@ -174,6 +174,10 @@ void LinkedListHeadAdd(linked_list list, linked_list_head_elemtype elem)
 {
 	if (LinkedListHeadEmpty(list)) {
 		linked_node * pnode = (linked_node *) malloc(sizeof(linked_node));
+		if (!pnode) {
+			printf("Fail to allocate memory.\n");
+			exit(0);
+		}
 		pnode->elem = elem;
 		pnode->next = NULL;
 		list->next = pnode;
@@ -230,11 +234,11 @@ void LinkedListHeadUnion(linked_list * list1, linked_list * list2)
 	list2 = NULL;
 }
 
-void SeqToLinkedHead(seq_list s_list, linked_list l_list)
+void SeqToLinkedHead(seq_list * s_list, linked_list l_list)
 {
-	int num = s_list->num_elem;
+	int num = (*s_list)->num_elem;
 	while (num) {
-		LinkedListHeadAdd(l_list, s_list->elem[num - 1]);
+		LinkedListHeadAdd(l_list, (*s_list)->elem[num - 1]);
 		num--;
 	}
 }

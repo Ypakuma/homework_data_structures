@@ -89,10 +89,10 @@ int SeqBinaryTreeGetParent(seq_binary_tree tree, int index);
 
 /********************************
 * aim:       destroy a tree node and its all subtrees.
-* parameter: tree: the tree which will be destroyed.
+* parameter: ptree: a pointer to tree which will be destroyed.
 * return:    void.
 ********************************/
-void SeqBinaryTreeDestroy(seq_binary_tree tree);
+void SeqBinaryTreeDestroy(seq_binary_tree *ptree);
 
 /********************************
 * aim:       destroy a tree's all subtrees.

@@ -10,9 +10,13 @@ bool LinkedStackEmpty(linked_stack stack)
 	return !stack;
 }
 
-bool LinkedStackPush(linked_stack * stack, linked_stack_elemtype elem)
+void LinkedStackPush(linked_stack * stack, linked_stack_elemtype elem)
 {
 	struct linked_stack_node_s * pnode = (struct linked_stack_node_s *)malloc(sizeof(struct linked_stack_node_s));
+	if (!pnode) {
+		printf("Fail to allocate memory.\n");
+		exit(0);
+	}
 
 	pnode->elem = elem;
 	pnode->next = (*stack);

@@ -192,11 +192,11 @@ void LinkedListCirDoubUnion(cir_doub_list list1, cir_doub_list * list2)
 	(*list2) = NULL;
 }
 
-void SeqToLinkedCirDoub(seq_list s_list, cir_doub_list l_list)
+void SeqToLinkedCirDoub(seq_list * s_list, cir_doub_list l_list)
 {
-	int num = s_list->num_elem;
+	int num = (*s_list)->num_elem;
 	while (num) {
-		LinkedListCirDoubAdd(l_list, s_list->elem[num - 1]);
+		LinkedListCirDoubAdd(l_list, (*s_list)->elem[num - 1]);
 		num--;
 	}
 }

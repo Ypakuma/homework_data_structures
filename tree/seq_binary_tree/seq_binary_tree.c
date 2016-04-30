@@ -2,8 +2,13 @@
 
 seq_binary_tree SeqBinaryTreeInit(seq_binary_tree_elemtype elem, int len)
 {
-	seq_binary_tree ptree = (seq_binary_tree) malloc(sizeof(seq_binary_tree_node) * len);
+	seq_binary_tree ptree = (seq_binary_tree) malloc(sizeof(struct seq_binary_tree_s));
 	if (!ptree) {
+		printf("Fail to allocate memory.\n");
+		exit(0);
+	}
+	ptree->node = (seq_binary_tree_node*) malloc(len * sizeof(seq_binary_tree_node));
+	if (!(ptree->node)) {
 		printf("Fail to allocate memory.\n");
 		exit(0);
 	}
@@ -39,6 +44,8 @@ bool SeqBinaryTreeAddChildL(seq_binary_tree tree, int index_parent, seq_binary_t
 
 	tree->node[index_parent].lchild = index_child;
 
+	(tree->num_node)++;
+
 	return true;
 }
 
@@ -62,6 +69,8 @@ bool SeqBinaryTreeAddChildR(seq_binary_tree tree, int index_parent, seq_binary_t
 	tree->node[index_child].parent = index_parent;
 
 	tree->node[index_parent].rchild = index_child;
+
+	(tree->num_node)++;
 
 	return true;
 }
@@ -124,11 +133,11 @@ int SeqBinaryTreeGetParent(seq_binary_tree tree, int index)
 	return index_parent;
 }
 
-void SeqBinaryTreeDestroy(seq_binary_tree tree)
+void SeqBinaryTreeDestroy(seq_binary_tree *ptree)
 {
-	free(tree->node);
-	free(tree);
-	tree = NULL;
+	free((*ptree)->node);
+	free(*ptree);
+	(*ptree) = NULL;
 }
 
 void SeqBinaryTreeClear(seq_binary_tree tree)
