@@ -21,10 +21,13 @@
     <ClCompile Include="huffman.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="quick_tree\quick_sort.c">
+    <ClCompile Include="main.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="main.c">
+    <ClCompile Include="seq_stack\seq_stack.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="quick_sort\quick_sort.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,7 +38,10 @@
     <ClInclude Include="huffman.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="quick_tree\quick_sort.h">
+    <ClInclude Include="seq_stack\seq_stack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="quick_sort\quick_sort.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

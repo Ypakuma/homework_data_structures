@@ -52,6 +52,12 @@ bool LinkedBinaryTreeAddChildR(linked_binary_tree_node * node, linked_binary_tre
 bool LinkedBinaryTreeLeaf(linked_binary_tree_node * node);
 
 /********************************
+* aim:       get a the number of a tree's nodes.
+* parameter: node: the tree node.
+* return:    the number of the tree's depth.
+********************************/
+int LinkedBinaryTreeNumNode(linked_binary_tree_node * node);
+/********************************
 * aim:       get a tree's depth.
 * parameter: node: the tree node.
 * return:    the number of the tree's depth.

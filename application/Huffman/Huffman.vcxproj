@@ -144,13 +144,15 @@
   <ItemGroup>
     <ClCompile Include="huffman.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="quick_tree\quick_sort.c" />
+    <ClCompile Include="quick_sort\quick_sort.c" />
     <ClCompile Include="seq_binary_tree\seq_binary_tree.c" />
+    <ClCompile Include="seq_stack\seq_stack.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="huffman.h" />
-    <ClInclude Include="quick_tree\quick_sort.h" />
+    <ClInclude Include="quick_sort\quick_sort.h" />
     <ClInclude Include="seq_binary_tree\seq_binary_tree.h" />
+    <ClInclude Include="seq_stack\seq_stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

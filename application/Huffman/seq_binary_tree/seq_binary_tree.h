@@ -19,7 +19,7 @@ typedef struct seq_binary_tree_s {
 	int num_node;
 	int len;
 	seq_binary_tree_node * node;
-} *seq_binary_tree;
+} * seq_binary_tree;
 
 
 /********************************

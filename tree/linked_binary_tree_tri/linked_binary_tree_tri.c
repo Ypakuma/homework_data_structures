@@ -66,6 +66,18 @@ bool LinkedBinaryTreeLeaf(linked_binary_tree_node * node)
 	return !(node->lchild || node->lchild);
 }
 
+int LinkedBinaryTreeNumNode(linked_binary_tree_node * node)
+{
+	if (node == NULL)
+		return 0;
+
+	int num_l, num_r;
+	num_l = LinkedBinaryTreeNumNode(node->lchild);
+	num_r = LinkedBinaryTreeNumNode(node->rchild);
+
+	return 1 + num_l + num_r;
+}
+
 int LinkedBinaryTreeGetDepth(linked_binary_tree_node * node)
 {
 	if (LinkedBinaryTreeLeaf(node))
