@@ -1,3 +1,5 @@
-﻿  huffman.c
-m:\code\homework\homework_data_structures\application\huffman\huffman.c(91): warning C4133: “=”: 从“int *”到“char *”的类型不兼容
-  Huffman.vcxproj -> M:\code\homework\homework_data_structures\application\Huffman\Debug\Huffman.exe
+﻿  linked_list_head.c
+  huffman.c
+m:\github\homework_data_structures\application\huffman\huffman.c(86): warning C4133: “=”: 从“int *”到“char *”的类型不兼容
+  正在生成代码...
+  Huffman.vcxproj -> M:\GitHub\homework_data_structures\application\Huffman\Debug\Huffman.exe

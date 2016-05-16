@@ -9,7 +9,7 @@ seq_stack SeqStackInit(void)
 	}
 
 	pstack->top = 0;
-	pstack->len = MAX_ELEM;
+	pstack->len = MAX_ELEM_SEQ_STACK;
 	pstack->elem = (seq_stack_elemtype*) malloc(sizeof(seq_stack_elemtype) * pstack->len);
 	if (!pstack) {
 		printf("Fail to allocate memory.\n");

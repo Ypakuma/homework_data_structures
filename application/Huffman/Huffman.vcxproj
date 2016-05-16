@@ -143,6 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="huffman.c" />
+    <ClCompile Include="linked_list_head\linked_list_head.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="quick_sort\quick_sort.c" />
     <ClCompile Include="seq_binary_tree\seq_binary_tree.c" />
@@ -150,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="huffman.h" />
+    <ClInclude Include="linked_list_head\linked_list_head.h" />
     <ClInclude Include="quick_sort\quick_sort.h" />
     <ClInclude Include="seq_binary_tree\seq_binary_tree.h" />
     <ClInclude Include="seq_stack\seq_stack.h" />

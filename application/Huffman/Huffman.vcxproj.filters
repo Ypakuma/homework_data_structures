@@ -30,6 +30,9 @@
     <ClCompile Include="quick_sort\quick_sort.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="linked_list_head\linked_list_head.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="seq_binary_tree\seq_binary_tree.h">
@@ -42,6 +45,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="quick_sort\quick_sort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="linked_list_head\linked_list_head.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

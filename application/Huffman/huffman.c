@@ -1,4 +1,5 @@
 #include "huffman.h"
+#include "linked_list_head\linked_list_head.h"
 
 huffman_tree CreateHuffmanTree(seq_binary_tree normal_tree)
 {
@@ -17,42 +18,36 @@ huffman_tree CreateHuffmanTree(seq_binary_tree normal_tree)
 	}
 
 	//this array to storage the index of Huffman tree's nodes from min to max by its weight
-	int * min_index = (int*) malloc(sizeof(int) * normal_tree->num_node);
-	if (!min_index) {
-		printf("Fail to allocate memory.\n");
-		exit(0);
-	}
-	for (int i = 0; i < normal_tree->num_node; i++) {
-		min_index[i] = i;
-	}
+	linked_list min_index;
+	min_index = LinkedListHeadInit();
+	for (int i = 0; i < normal_tree->num_node; i++)
+		LinkedListHeadAdd(min_index, i);
 
 	//storage other nodes in Huffman tree
 	for (int i = huffman->num_node; i < huffman->len; i++) {
-		huffman->node[i].lchild = min_index[0];
-		huffman->node[i].rchild = min_index[1];
-		huffman->node[i].weight = huffman->node[min_index[0]].weight + huffman->node[min_index[1]].weight;
-		huffman->node[min_index[0]].parent = i;
-		huffman->node[min_index[1]].parent = i;
-		huffman->num_node++;
+		huffman->node[i].lchild = min_index->next->elem;
+		huffman->node[i].rchild = min_index->next->next->elem;
+		huffman->node[i].weight = huffman->node[min_index->next->elem].weight + huffman->node[min_index->next->next->elem].weight;
+		huffman->node[min_index->next->elem].parent = i;
+		huffman->node[min_index->next->next->elem].parent = i;
 
-		//2 * normal_tree->num_node - i = normal_tree->num_node - (i - normal_tree->num_node)
-		//it is the index of the last elements in min_index array
-		int j = 2;
-		while(j < 2 * normal_tree->num_node - i) {
-			if (huffman->node[i].weight <= huffman->node[min_index[j]].weight)
-				break;
-			else
-				min_index[j - 2] = min_index[j];
-			j++;
+		
+		LinkedListHeadDelete(min_index, min_index->next);
+		LinkedListHeadDelete(min_index, min_index->next);
+		linked_node * tmp_node_pre = min_index;
+		linked_node * tmp_node = min_index->next;
+
+		while (tmp_node != 0 && huffman->node[tmp_node->elem].weight <= huffman->node[i].weight) {
+			tmp_node_pre = tmp_node_pre->next;
+			tmp_node = tmp_node->next;
 		}
-		min_index[j - 2] = i;
-		while (j < 2 * normal_tree->num_node - i) {
-			min_index[j - 1] = min_index[j];
-			j++;
-		}
+		LinkedListHeadInsert(tmp_node_pre, huffman->num_node);
+
+		huffman->num_node++;
 	}
 	huffman->node[huffman->len - 1].parent = -1;
 
+	LinkedListHeadDestroy(&min_index);
 	return huffman;
 }
 

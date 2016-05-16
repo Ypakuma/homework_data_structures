@@ -5,21 +5,19 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define MAX_ELEM 100
-
-
 typedef int seq_list_elemtype;
 typedef struct seq_list_s{
-	seq_list_elemtype elem[MAX_ELEM];
+	seq_list_elemtype * elem;
 	int num_elem;
+	int len;
 } *seq_list;
 
 /********************************
 * aim:       create a new sequential list and initialize it.
-* parameter: void.
+* parameter: num_elem: the number of the element.
 * return:    the new sequential list.
 ********************************/
-seq_list SeqListInit(void);
+seq_list SeqListInit(int num_elem);
 
 /********************************
 * aim:       get how many a list's elements.

@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-typedef int seq_binary_tree_elemtype;
+typedef char seq_binary_tree_elemtype;
 
 typedef struct seq_binary_tree_node_s {
 	int weight;

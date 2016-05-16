@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define MAX_ELEM 100
+#define MAX_ELEM_SEQ_STACK 100
 
 typedef int seq_stack_elemtype;
 typedef struct seq_stack_s{
