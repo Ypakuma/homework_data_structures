@@ -1,41 +1,49 @@
-#include "seq_dir_graph\seq_dir_graph.h"
+#include "adj_list_dir_graph\adj_list_dir_graph.h"
 
 int main(void)
 {
-	seq_dir_graph graph;
+	adj_list_dir_graph graph;
 
-	graph = SeqDirGraphInit(10);
-	SeqDirGraphAddVex(graph, 'a');
-	SeqDirGraphAddVex(graph, 'b');
-	SeqDirGraphAddVex(graph, 'c');
-	SeqDirGraphAddVex(graph, 'd');
-	SeqDirGraphAddVex(graph, 'e');
-	SeqDirGraphAddVex(graph, 'f');
+	graph = AdjListDirGraphInit(10);
+	AdjListDirGraphAddVex(graph, 'a');
+	AdjListDirGraphAddVex(graph, 'b');
+	AdjListDirGraphAddVex(graph, 'c');
+	AdjListDirGraphAddVex(graph, 'd');
+	AdjListDirGraphAddVex(graph, 'e');
+	AdjListDirGraphAddVex(graph, 'f');
 
-	SeqDirGraphAddEdge(graph, 0, 1, 5);
-	SeqDirGraphAddEdge(graph, 0, 3, 7);
-	SeqDirGraphAddEdge(graph, 1, 2, 4);
-	SeqDirGraphAddEdge(graph, 2, 0, 8);
-	SeqDirGraphAddEdge(graph, 2, 5, 9);
-	SeqDirGraphAddEdge(graph, 3, 2, 5);
-	SeqDirGraphAddEdge(graph, 3, 5, 6);
-	SeqDirGraphAddEdge(graph, 4, 3, 5);
-	SeqDirGraphAddEdge(graph, 5, 0, 3);
-	SeqDirGraphAddEdge(graph, 5, 4, 1);
+	AdjListDirGraphAddEdge(graph, 0, 1, 5);
+	AdjListDirGraphAddEdge(graph, 0, 3, 7);
+	AdjListDirGraphAddEdge(graph, 1, 2, 4);
+	AdjListDirGraphAddEdge(graph, 2, 0, 8);
+	AdjListDirGraphAddEdge(graph, 2, 5, 9);
+	AdjListDirGraphAddEdge(graph, 3, 2, 5);
+	AdjListDirGraphAddEdge(graph, 3, 5, 6);
+	AdjListDirGraphAddEdge(graph, 4, 3, 5);
+	AdjListDirGraphAddEdge(graph, 5, 0, 3);
+	AdjListDirGraphAddEdge(graph, 5, 4, 1);
 
-	SeqDirGraphPrint(graph);
+	AdjListDirGraphPrint(graph);
 
-	int ans = SeqDirGraphLocateVex(graph, 'b');
-	ans = SeqDirGraphLocateVex(graph, 'g');
+	//int ans = AdjListDirGraphIndegree(graph, 2);
+	//ans = AdjListDirGraphOutdegree(graph, 4);
 
-	//SeqDirGraphDelEdge(graph, 1, 2);
-	//SeqDirGraphDelVex(graph, 2);
+	//ans = AdjListDirGraphLocateVex(graph, 'b');
+	//ans = AdjListDirGraphLocateVex(graph, 'g');
 
-	SeqDirGraphTraverseB(graph);
+	//ans = AdjListDirGraphFirstAdj(graph, 2);
+	//ans = AdjListDirGraphNextAdj(graph, 3, 3);
+
+	//AdjListDirGraphDelEdge(graph, 0, 1);
+	//AdjListDirGraphPrint(graph);
+	//AdjListDirGraphDelVex(graph, 3);
+	//AdjListDirGraphPrint(graph);
+
+	AdjListDirGraphTraverseB(graph);
 
 
-	SeqDirGraphClear(graph);
-	SeqDirGraphDestroy(&graph);
+	AdjListDirGraphClear(graph);
+	AdjListDirGraphDestroy(&graph);
 
 	return 0;
 }

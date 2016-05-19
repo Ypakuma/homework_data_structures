@@ -1,5 +1,5 @@
 #include "seq_dir_graph.h"
-#include "cir_queue.h"
+#include "..\others\cir_queue.h"
 
 //遍历图的结点时的具体操作
 void SeqDirGraphTraverseAction(seq_dir_graph graph, int index);
@@ -49,7 +49,9 @@ seq_dir_graph SeqDirGraphInit(int num_vex)
 
 void SeqDirGraphClear(seq_dir_graph graph)
 {
+	//清空结点表
 	graph->vex->len = 0;
+	//清空权重表
 	for (int i = 0; i < graph->vex->num_vex; i++)
 		for (int j = 0; j < graph->vex->num_vex; j++)
 			graph->weight[i][j] = 0;
@@ -87,7 +89,6 @@ void SeqDirGraphPrint(seq_dir_graph graph)
 	}
 
 	printf("\n");
-	return 0;
 }
 
 bool SeqDirGraphVexExist(seq_dir_graph graph, int index)
@@ -162,6 +163,30 @@ bool SeqDirGraphDelVex(seq_dir_graph graph, int index)
 	return false;
 }
 
+int SeqDirGraphIndegree(seq_dir_graph graph, int index)
+{
+	int n = graph->vex->num_vex;
+	int indegree;
+
+	for (int i = 0; i < n; i++)
+		if (graph->weight[i][index] > 0)
+			indegree++;
+
+	return indegree;
+}
+
+int SeqDirGraphOutdegree(seq_dir_graph graph, int index)
+{
+	int n = graph->vex->num_vex;
+	int outdegree;
+
+	for (int i = 0; i < n; i++)
+		if (graph->weight[index][i] > 0)
+			outdegree++;
+
+	return outdegree;
+}
+
 int SeqDirGraphLocateVex(seq_dir_graph graph, seq_dir_graph_vex_elemtype elem)
 {
 	int n = graph->vex->num_vex;
@@ -182,7 +207,7 @@ seq_dir_graph_vex_elemtype SeqDirGraphGetVex(seq_dir_graph graph, int index)
 
 int SeqDirGraphFirstAdj(seq_dir_graph graph, int index)
 {
-	SeqDirGraphNextAdj(graph, index, -1);
+	return SeqDirGraphNextAdj(graph, index, -1);
 }
 
 int SeqDirGraphNextAdj(seq_dir_graph graph, int index, int pre)
@@ -194,6 +219,7 @@ int SeqDirGraphNextAdj(seq_dir_graph graph, int index, int pre)
 				return i;
 		return -1;
 	}
+
 	printf("Illegal input.\n");
 	return -2;
 }
@@ -201,7 +227,7 @@ int SeqDirGraphNextAdj(seq_dir_graph graph, int index, int pre)
 void SeqDirGraphTraverseD(seq_dir_graph graph)
 {
 	int n = graph->vex->len;
-
+	//创建bool型数组，存放结点是否已被访问
 	bool * visited;
 	visited = (bool *) malloc(sizeof(int) * n);
 	if (!visited) {
@@ -211,24 +237,26 @@ void SeqDirGraphTraverseD(seq_dir_graph graph)
 	for (int i = 0; i < n; i++)
 		visited[i] = false;
 
-	for (int index = 0; visited[index] == false; index++)
-		SeqDirGraphLoopD(graph, index, visited);
+	//遍历一遍图，防止图中有两个及以上的连通分量
+	for (int index = 0; index < n; index++)
+		if (visited[index] == false)
+			SeqDirGraphLoopD(graph, index, visited);
 
 	free(visited);
 }
 
 void SeqDirGraphLoopD(seq_dir_graph graph, int index, bool * visited)
 {
-	if (visited[index] == true)
-		return;
+	if (visited[index] == false) {
+		SeqDirGraphTraverseAction(graph, index);
+		visited[index] = true;
 
-	SeqDirGraphTraverseAction(graph, index);
-	visited[index] = true;
-
-	int next_index = SeqDirGraphFirstAdj(graph, index);
-	while (next_index >= 0) {
-		SeqDirGraphLoopD(graph, next_index, visited);
-		next_index = SeqDirGraphNextAdj(graph, index, next_index);
+		int next_index = SeqDirGraphFirstAdj(graph, index);
+		while (next_index >= 0) {
+			//递归，深度遍历
+			SeqDirGraphLoopD(graph, next_index, visited);
+			next_index = SeqDirGraphNextAdj(graph, index, next_index);
+		}
 	}
 }
 
@@ -249,20 +277,26 @@ void SeqDirGraphTraverseB(seq_dir_graph graph)
 	queue = CirQueueInit(graph->vex->num_vex);
 
 	for (int i = 0; visited[i] == false; i++) {
+		//遍历一遍图，防止图中有两个及以上的连通分量
 		if (visited[i] == false) {
+			//把元素入队
 			CirQueueEnter(queue, i);
 			visited[i] = true;
 
 			do {
+				//元素出队，并进行操作
 				int index = CirQueueExit(queue);
 				SeqDirGraphTraverseAction(graph, index);
+				//查找第一个“子节点”
 				int adj_index = SeqDirGraphFirstAdj(graph, index);
-
+				//广度遍历
 				while (adj_index >= 0) {
 					if (visited[adj_index] == false) {
+						//子节点入队
 						CirQueueEnter(queue, adj_index);
 						visited[adj_index] = true;
 					}
+					//查找同一“父节点”的下一个“子节点”
 					adj_index = SeqDirGraphNextAdj(graph, index, adj_index);
 				}
 			} while (!CirQueueEmpty(queue));

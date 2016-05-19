@@ -1,4 +1,5 @@
-﻿  seq_dir_graph.c
-m:\github\homework_data_structures\graph\seq_dir_graph\seq_dir_graph.c(94): warning C4098: “SeqDirGraphPrint”:“void”函数返回值
-m:\github\homework_data_structures\graph\seq_dir_graph\seq_dir_graph.c(190): warning C4716: “SeqDirGraphFirstAdj”: 必须返回一个值
+﻿  seq_undir_graph.c
+  main.c
+  正在生成代码...
+m:\github\homework_data_structures\graph\seq_undir_graph\seq_undir_graph.c(176): warning C4700: 使用了未初始化的局部变量“degree”
   graph.vcxproj -> M:\GitHub\homework_data_structures\graph\Debug\graph.exe

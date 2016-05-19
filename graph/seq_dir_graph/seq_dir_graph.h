@@ -46,6 +46,12 @@ bool SeqDirGraphAddVex(seq_dir_graph graph, seq_dir_graph_vex_elemtype elem);
 //删除结点
 bool SeqDirGraphDelVex(seq_dir_graph graph, int index);
 
+//根据结点下标，求结点入度
+int SeqDirGraphIndegree(seq_dir_graph graph, int index);
+
+//根据结点下标，求结点出度
+int SeqDirGraphOutdegree(seq_dir_graph graph, int index);
+
 //定位结点，参数为结点元素，返回结点下标，如果元素不存在，返回-1
 int SeqDirGraphLocateVex(seq_dir_graph graph, seq_dir_graph_vex_elemtype elem);
 
@@ -55,7 +61,8 @@ seq_dir_graph_vex_elemtype SeqDirGraphGetVex(seq_dir_graph graph, int index);
 //返回输入下标的第一个邻接点（adj），返回邻接点的下标
 int SeqDirGraphFirstAdj(seq_dir_graph graph, int index);
 
-//返回输入下标相对于另一个下标的下一个邻接点，返回邻接点的下标
+//返回输入下标index相对于另一个下标pre的下一个邻接点
+//返回邻接点的下标,如果index不存在，返回-2；如果pre的下一个邻接点不存在，返回-1
 int SeqDirGraphNextAdj(seq_dir_graph graph, int index, int pre);
 
 //深度优先遍历图

@@ -21,7 +21,13 @@
     <ClCompile Include="seq_dir_graph\seq_dir_graph.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="seq_dir_graph\cir_queue.c">
+    <ClCompile Include="seq_undir_graph\seq_undir_graph.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="others\cir_queue.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="adj_list_dir_graph\adj_list_dir_graph.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +35,13 @@
     <ClInclude Include="seq_dir_graph\seq_dir_graph.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="seq_dir_graph\cir_queue.h">
+    <ClInclude Include="seq_undir_graph\seq_undir_graph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="others\cir_queue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="adj_list_dir_graph\adj_list_dir_graph.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
