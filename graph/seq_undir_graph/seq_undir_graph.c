@@ -169,7 +169,7 @@ bool SeqUndirGraphDelVex(seq_undir_graph graph, int index)
 int SeqUndirGraphDegree(seq_undir_graph graph, int index)
 {
 	int n = graph->vex->num_vex;
-	int degree;
+	int degree = 0;
 
 	for (int i = 0; i < n; i++)
 		if (graph->weight[i][index] > 0)

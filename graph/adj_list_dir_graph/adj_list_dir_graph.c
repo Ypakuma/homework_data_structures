@@ -53,6 +53,7 @@ void AdjListDirGraphDestroy(adj_list_dir_graph * graph)
 	AdjListDirGraphClear(*graph);
 	free((*graph)->vex);
 	free(*graph);
+	(*graph) = NULL;
 }
 
 void AdjListDirGraphPrint(adj_list_dir_graph graph)
@@ -78,6 +79,7 @@ bool AdjListDirGraphVexExist(adj_list_dir_graph graph, int index)
 	return false;
 }
 
+
 bool AdjListDirGraphAddEdge(adj_list_dir_graph graph, int out, int in, int weight)
 {
 	if (AdjListDirGraphVexExist(graph, out) && AdjListDirGraphVexExist(graph, in)) {
@@ -89,13 +91,13 @@ bool AdjListDirGraphAddEdge(adj_list_dir_graph graph, int out, int in, int weigh
 			exit(0);
 		}
 		pnode->adj_index = in;
-		pnode->next_adj = NULL;
 		pnode->weight = weight;
 
 		//将新的邻接结点插入邻接表
 		adj_list_dir_graph_adj_node * locat = graph->vex[out].first_adj;
-		//出结点出度为0
-		if (locat == NULL) {
+		//出结点出度为0，新的边权重最小
+		if (locat == NULL || locat->weight > weight) {
+			pnode->next_adj = locat;
 			graph->vex[out].first_adj = pnode;
 			return true;
 		}
@@ -103,6 +105,7 @@ bool AdjListDirGraphAddEdge(adj_list_dir_graph graph, int out, int in, int weigh
 		while (locat->next_adj != NULL && locat->next_adj->adj_index > in)
 			locat = locat->next_adj;
 
+		pnode->next_adj = locat->next_adj;
 		locat->next_adj = pnode;
 
 		return true;

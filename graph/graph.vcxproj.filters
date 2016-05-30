@@ -30,6 +30,9 @@
     <ClCompile Include="adj_list_dir_graph\adj_list_dir_graph.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="orthogonal_list_graph\orthogonal_list_graph.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="seq_dir_graph\seq_dir_graph.h">
@@ -42,6 +45,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="adj_list_dir_graph\adj_list_dir_graph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="orthogonal_list_graph\orthogonal_list_graph.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

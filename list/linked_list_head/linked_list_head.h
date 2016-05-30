@@ -94,7 +94,7 @@ void LinkedListHeadClear(linked_list list);
 * parameter: list: the list.
 * return:    void.
 ********************************/
-void LinkedListHeadDestroy(linked_list list);
+void LinkedListHeadDestroy(linked_list * list);
 
 /********************************
 * aim:       add a new element in a list by sort.

@@ -161,12 +161,12 @@ void LinkedListHeadClear(linked_list list)
 	list->next = NULL;
 }
 
-void LinkedListHeadDestroy(linked_list list)
+void LinkedListHeadDestroy(linked_list * list)
 {
-	if (list) {
-		LinkedListHeadClear(list);
-		free(list);
-		list->next = NULL;
+	if (*list) {
+		LinkedListHeadClear(*list);
+		free(*list);
+		*list = NULL;
 	}
 }
 
