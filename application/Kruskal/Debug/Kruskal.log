@@ -1,2 +1,3 @@
-﻿  main.c
+﻿  Kruskal.c
+m:\github\homework_data_structures\application\kruskal\kruskal.c(81): warning C4133: “函数”: 从“kruskal_edge_list”到“quick_sort_elemtype *”的类型不兼容
   Kruskal.vcxproj -> M:\GitHub\homework_data_structures\application\Kruskal\Debug\Kruskal.exe

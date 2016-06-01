@@ -11,10 +11,10 @@ typedef struct kruskal_edge_quick_sort_s {
 } quick_sort_elemtype;
 
 //sort an array
-void quick_sort(struct kruskal_edge_s * array, int head, int tail);
+void quick_sort(quick_sort_elemtype * array, int head, int tail);
 
 //move one element to the correct location
 //return the location of the array
-int move(struct kruskal_edge_s * array, int head, int tail);
+int move(quick_sort_elemtype * array, int head, int tail);
 
 #endif
